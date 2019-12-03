@@ -1,2 +1,2 @@
-SET PORT=%Fabric_Endpoint_ReviewsTypeEndpoint%
+SET PORT=%Fabric_Endpoint_PackagesOptionsTypeEndpoint%
 node.exe build\server.js
