@@ -1,0 +1,6 @@
+{
+    "defaultCommandTimeout": 10000,
+    "baseUrl": "http://localhost:5997/api",
+    "video":false
+  }
+  

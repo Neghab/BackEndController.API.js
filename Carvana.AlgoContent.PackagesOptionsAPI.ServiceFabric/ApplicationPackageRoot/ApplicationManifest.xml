@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="Carvana.AlgoContent.PackagesOptionsAPI.ServiceFabricType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="PackagesOptions_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="Carvana.AlgoContent.PackagesOptionsAPI.WebApi_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="AspNetCoreEnvironment" DefaultValue="" />
+    <Parameter Name="Carvana.PackagesOptions_PlacementConstraints" DefaultValue="" />
+    <Parameter Name="Carvana.AlgoContent.PackagesOptionsAPI.WebApi_PlacementConstraints" DefaultValue="" />
+    <Parameter Name="DecryptionCertificateThumbprint" DefaultValue="51F29DDF0C4D4144FBF6FA184BE32BBD0D6A710A" />
+  </Parameters>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="PackagesOptionsPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="Carvana.AlgoContent.PackagesOptionsAPI.WebApiPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+    <EnvironmentOverrides CodePackageRef="Code">
+      <EnvironmentVariable Name="ASPNETCORE_ENVIRONMENT" Value="[AspNetCoreEnvironment]" />
+    </EnvironmentOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <Service Name="PackagesOptions" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="PackagesOptionsType" InstanceCount="[PackagesOptions_InstanceCount]">
+        <SingletonPartition />
+        <PlacementConstraints>[Carvana.PackagesOptions_PlacementConstraints]</PlacementConstraints>
+      </StatelessService>
+    </Service>
+    <Service Name="Carvana.AlgoContent.PackagesOptionsAPI.WebApi" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="Carvana.AlgoContent.PackagesOptionsAPI.WebApiType" InstanceCount="[Carvana.AlgoContent.PackagesOptionsAPI.WebApi_InstanceCount]">
+        <SingletonPartition />
+        <PlacementConstraints>[Carvana.AlgoContent.PackagesOptionsAPI.WebApi_PlacementConstraints]</PlacementConstraints>
+      </StatelessService>
+    </Service>
+  </DefaultServices>
+  <!--<Principals>
+    <Users>
+      <User Name="Service1" AccountType="NetworkService" />
+    </Users>
+  </Principals>
+  <Policies>
+    <SecurityAccessPolicies>
+      <SecurityAccessPolicy ResourceRef="ConnectionStringCert" PrincipalRef="Service1" ResourceType="Certificate" />
+    </SecurityAccessPolicies>
+  </Policies>
+  <Certificates>
+    <SecretsCertificate X509FindValue="[DecryptionCertificateThumbprint]" Name="ConnectionStringCert" />
+  </Certificates>-->
+</ApplicationManifest>
