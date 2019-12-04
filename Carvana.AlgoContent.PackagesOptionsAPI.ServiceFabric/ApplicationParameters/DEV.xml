@@ -2,9 +2,8 @@
 <Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/Carvana.AlgoContent.PackagesOptionsAPI.ServiceFabric" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="AspNetCoreEnvironment" Value="DEV" />
-    <Parameter Name="Carvana.AlgoContent.PackagesOptionsAPI.WebApi_InstanceCount" Value="-1" />
-    <Parameter Name="Carvana.AlgoContent.PackagesOptionsAPI.WebApi_PlacementConstraints" Value="(NodeType == seo)" />
-    <Parameter Name="Carvana.PackagesOptions_PlacementConstraints" Value="(NodeType == seo)" />
+    <Parameter Name="packagesOptions_InstanceCount" Value="-1" />
+    <Parameter Name="packagesOptions_PlacementConstraints" Value="(NodeType == seo)" />
 
   </Parameters>
 </Application>

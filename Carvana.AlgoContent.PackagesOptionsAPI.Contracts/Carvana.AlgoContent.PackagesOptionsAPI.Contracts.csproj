@@ -1,6 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <Configurations>Debug;Release;DEV;TEST;UAT;PROD</Configurations>
-  </PropertyGroup>
-</Project>
