@@ -5,7 +5,7 @@ import {restRouter} from './api';
 import {sendSplunkLog} from './logger';
 import config from './config/config';
 
-const {CARVANA_APP_APP_INSIGHT_KEY} = config;
+const {CARVANA_APP_APP_INSIGHTS_KEY} = config;
 
 const app = express();
 const PORT = process.env.PORT || 5997;
@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:true}));
 
 
 appInsights
-  .setup(`${CARVANA_APP_APP_INSIGHT_KEY}`)
+  .setup(`${CARVANA_APP_APP_INSIGHTS_KEY}`)
   .setAutoDependencyCorrelation(false)
   .setAutoCollectRequests(true)
   .setAutoCollectPerformance(true)

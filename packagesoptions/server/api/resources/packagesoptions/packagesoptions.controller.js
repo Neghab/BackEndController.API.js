@@ -49,13 +49,13 @@ export default {
         };
 
         response = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
+        return logAndReturn("PackagesOptions YMM Success", res, 200, response, req.params);
       }catch(err){
         return logAndReturn(err, res, 400, response, req);
       }
     } catch (err) {
       return logAndReturn(`Critical Error: ${err}`, res, 500, err, req);
     }
-    return res.json(response);
   },
 
   async queryTest(req, res) {
@@ -73,12 +73,12 @@ export default {
         };
 
         response = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
+        return logAndReturn("PackagesOptions YMM **TEST** Success", res, 200, response, req.params)
       }catch(err){
         return logAndReturn(err, res, 400, response, req);
       }
     } catch (err) {
       return logAndReturn(`Critical Error: ${err}`, res, 500, err, req);
     }
-    return res.json(response);
   }
 };
