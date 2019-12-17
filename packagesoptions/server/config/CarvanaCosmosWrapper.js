@@ -1,7 +1,9 @@
-// 'AccountEndpoint=https://someurl.thatoneplace.com:943/;AccountKey=stuffgoesherelfkjsdlkfjslkdjflskdjf==;'
+// 'AccountEndpoint=https://carvana-algocontent-pkgopt-dev.documents.azure.com:443/;AccountKey=l2K22p9hQ2vPKu23RDw9gjWp4tvGZ4df7J8KXhoqC8XsyZQkqdOiS1DEZtlzAoMGnEhpEZDlCROvmvcsOkL9Ig==;'
 
 import {CosmosClient} from '@azure/cosmos';
 import bluebird from 'bluebird';
+
+import {splunkLogger} from '../logger';
 
 const parseCosmosConnectionString = CONNECTION_STRING => {
     const parsedConnectionString = CONNECTION_STRING.split(/=;/);
@@ -15,6 +17,8 @@ export class CarvanaCosmosWrapper {
         this.query = this.query.bind(this);
         this._connection = connection;
         this._cosmosClient = null;
+        this._database = {};
+        this._container = {};
     }
 
     async init() {
@@ -27,19 +31,23 @@ export class CarvanaCosmosWrapper {
               CARVANA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE,
               getSecret
             } = this._connection;
-            console.log('retrieving credentials from keyvault');
-            const CARVANA_APP_COSMOSDB_SECRET = await getSecret({secretName:CARVANA_APP_COSMOSDB_SECRET_NAME, secretVersion:CARVANA_APP_COSMOSDB_SECRET_VERSION});
-            console.log('received keyvault creds');
+            // console.log('retrieving credentials from keyvault');
+            // const CARVANA_APP_COSMOSDB_SECRET = await getSecret({secretName:CARVANA_APP_COSMOSDB_SECRET_NAME, secretVersion:CARVANA_APP_COSMOSDB_SECRET_VERSION});
+            // console.log('received keyvault creds');
             // const connectionStringProperties = parseCosmosConnectionString(CARVANA_APP_COSMOSDB_SECRET);
 
-            console.log('cosmos is starting up');
+            
             this._cosmosClient = new CosmosClient({
-                endpoint: 'https://carvana-algocontent-dev.documents.azure.com:443',
-                key: 's1Rq5tBtNx9cBSHHrVJAXORzIpxt4OdRo45NQjlTNXNnXQI71z208tiem3LPaWjQNjQfwXzaxfGkmOGEzDLL9A=='
+                endpoint: 'https://carvana-algocontent-pkgopt-dev.documents.azure.com:443/',
+                key: 'l2K22p9hQ2vPKu23RDw9gjWp4tvGZ4df7J8KXhoqC8XsyZQkqdOiS1DEZtlzAoMGnEhpEZDlCROvmvcsOkL9Ig=='
             })
+            
             console.log('cosmos is ready');
             this._database = await this._cosmosClient.database(CARVANA_APP_COSMOSDB_DATABASE_ALGO_CONTENT);
             this._container = await this._database.container(CARVANA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE);
+            
+            console.log('connecting to container');
+            // this._container = await this._database.containers.createIfNotExists('packagesoptions-vehicle');
             
             return this;
           } catch(err) {
@@ -52,8 +60,17 @@ export class CarvanaCosmosWrapper {
 
     async query(querySpec) {
         try {
-            const {resources} = await this._container.items.query(querySpec).fetchAll();
-            return resources;
+            console.log('attempting to query container');
+            console.log(this._container)
+            const cosmosResponse = await this._container.items.query(querySpec).fetchAll();
+
+            splunkLogger.send({
+                message:{
+                    cosmosResponse
+                }
+            });
+
+            return cosmosResponse;
         } catch (err) {
             console.log(err);
             return err;

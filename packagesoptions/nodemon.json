@@ -1,0 +1,10 @@
+{
+  "verbose": false,
+  "ignore": ["node_modules"],
+  "ext": ".js,.json",
+  "execMap": {
+    "js": "babel-node"
+  },
+  "execArgs": ["-r", "node_modules/@carvana/babel/lib/register"],
+  "watch": "./server"
+}

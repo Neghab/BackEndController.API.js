@@ -3,6 +3,5 @@
   <Parameters>
     <Parameter Name="AspNetCoreEnvironment" Value="DEV" />
     <Parameter Name="packagesOptions_InstanceCount" Value="-1" />
-    <Parameter Name="packagesOptions_PlacementConstraints" Value="(NodeType == seo)" />
   </Parameters>
 </Application>

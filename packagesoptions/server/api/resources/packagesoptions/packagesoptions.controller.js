@@ -23,9 +23,8 @@ const capitalize = s => {
 export default {
   async getPackagesOptionsByYMM(req, res) {
     const emptyResponse = {};
-    let response = emptyResponse;
     try {
-      const {year, make, model} = req.params;
+      const {year, make, model} = req.query;
       if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, response, req.params);
 
       try{
@@ -48,10 +47,12 @@ export default {
           ]
         };
 
-        response = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
-        return logAndReturn("PackagesOptions YMM Success", res, 200, response, req.params);
+        const cosmosResponse = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
+        const {resources} = cosmosResponse;
+            
+        return logAndReturn("PackagesOptions YMM Success", res, 200, resources, {query: req.params, cosmosResponse});
       }catch(err){
-        return logAndReturn(err, res, 400, response, req);
+        return logAndReturn(err, res, 400, emptyResponse, req);
       }
     } catch (err) {
       return logAndReturn(`Critical Error: ${err}`, res, 500, err, req);
@@ -67,12 +68,12 @@ export default {
       if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, response, req.params);
 
       try{
-
+        
         const packagesOptionsByYMMQuerySpec = {
           query: "SELECT * FROM c where c.year=2019 and c.make='Audi' and c.model='A4'"
         };
-
-        response = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
+        console.log('the query from the controller: ', packagesOptionsByYMMQuerySpec)
+        response = await cosmosClient.query(JSON.stringify(packagesOptionsByYMMQuerySpec));
         return logAndReturn("PackagesOptions YMM **TEST** Success", res, 200, response, req.params)
       }catch(err){
         return logAndReturn(err, res, 400, response, req);

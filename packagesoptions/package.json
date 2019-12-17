@@ -4,10 +4,9 @@
   "description": "Carvana AlgoContent PackagesOptions API",
   "main": "index.js",
   "scripts": {
-    "start": "export IS_LOCAL_DEVELOPMENT=true&&nodemon server/index.js --exec babel-node --presets @babel/preset-env",
-    "start:windows": "SET IS_LOCAL_DEVELOPMENT=true&&nodemon server/index.js --exec babel-node --presets @babel/preset-env",
+    "start": "export NODE_ENV=development&&nodemon server/index.js --exec babel-node --presets @babel/preset-env",
     "serve": "node build/server.js",
-    "build:dev": "ignition build-server --stats --env-file=.env.development --config-file=ignition-config.js",
+    "build:dev": "ignition build-server --mode=development --env.NODE_ENV=development --env-file=.env.development --config-file=ignition-config.js",
     "build:test": "ignition build-server --mode=uat --env-file=.env.test --config-file=ignition-config.js",
     "build:uat": "ignition build-server --mode=production --env-file=.env.uat --config-file=ignition-config.js",
     "build:prod": "ignition build-server --mode=production --env-file=.env.production --config-file=ignition-config.js",
@@ -34,7 +33,7 @@
     "azure-keyvault": "^3.0.4",
     "bluebird": "^3.5.5",
     "cors": "^2.8.5",
-    "dotenv": "^8.0.0",
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "memory-cache": "^0.2.0",
     "ramda": "^0.26.1",
@@ -49,6 +48,7 @@
     "@babel/preset-env": "^7.4.4",
     "@carvana/ignition": "2.0.14",
     "btoa": "^1.2.1",
+    "cross-env": "^6.0.3",
     "cypress": "^3.3.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -57,6 +57,10 @@
     "html-inline-css-webpack-plugin": "1.2.1",
     "nodemon": "^1.18.11",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dotenv-plugin": "^2.1.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }

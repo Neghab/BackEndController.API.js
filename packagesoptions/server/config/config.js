@@ -3,6 +3,7 @@ import path from 'path';
 
 const getConfig = () => {
   if(process.env.IS_LOCAL_DEVELOPMENT === 'true') {
+    
     try{
       const localEnvConfig = dotenv.config({path:path.resolve(process.cwd(),'.env.development')})
       console.log(localEnvConfig.parsed);
@@ -11,6 +12,11 @@ const getConfig = () => {
       throw err;
     }
   }else{
+    if(process.env.NODE_ENV) {
+      const environment = process.env.NODE_ENV;
+      console.log(environment);
+      return dotenv.config({path:path.resolve(process.cwd(), `.env.${environment}`)}).parsed;
+    }
     return {
       CARVANA_APP_APP_INSIGHT_KEY: process.env.CARVANA_APP_APP_INSIGHT_KEY,
       CARVANA_APP_SPLUNK_TOKEN: process.env.CARVANA_APP_SPLUNK_TOKEN,

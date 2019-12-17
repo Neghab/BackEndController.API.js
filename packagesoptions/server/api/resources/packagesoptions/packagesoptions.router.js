@@ -4,7 +4,7 @@ import packagesOptionsController from './packagesoptions.controller';
 export const packagesOptionsRouter = express.Router();
 
 packagesOptionsRouter
-  .route('/:year/:make/:model')
+  .route('/')
   .get(packagesOptionsController.getPackagesOptionsByYMM);
 
 packagesOptionsRouter
