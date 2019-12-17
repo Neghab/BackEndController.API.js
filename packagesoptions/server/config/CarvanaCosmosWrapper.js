@@ -23,8 +23,8 @@ export class CarvanaCosmosWrapper {
             const {
               CARVANA_APP_COSMOSDB_SECRET_NAME,
               CARVANA_APP_COSMOSDB_SECRET_VERSION,
-              COSMOSDB_DATABASE_ALGO_CONTENT,
-              COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE,
+              CARVANA_APP_COSMOSDB_DATABASE_ALGO_CONTENT,
+              CARVANA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE,
               getSecret
             } = this._connection;
             console.log('retrieving credentials from keyvault');
@@ -38,8 +38,8 @@ export class CarvanaCosmosWrapper {
                 key: 's1Rq5tBtNx9cBSHHrVJAXORzIpxt4OdRo45NQjlTNXNnXQI71z208tiem3LPaWjQNjQfwXzaxfGkmOGEzDLL9A=='
             })
             console.log('cosmos is ready');
-            this._database = await this._cosmosClient.database(COSMOSDB_DATABASE_ALGO_CONTENT);
-            this._container = await this._database.container(COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE);
+            this._database = await this._cosmosClient.database(CARVANA_APP_COSMOSDB_DATABASE_ALGO_CONTENT);
+            this._container = await this._database.container(CARVANA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE);
             
             return this;
           } catch(err) {
