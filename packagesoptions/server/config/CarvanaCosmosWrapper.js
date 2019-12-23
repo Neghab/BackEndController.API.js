@@ -25,26 +25,27 @@ export class CarvanaCosmosWrapper {
         if(this._cosmosClient === null){
           try{
             const {
-              CARVANA_APP_COSMOSDB_SECRET_NAME,
-              CARVANA_APP_COSMOSDB_SECRET_VERSION,
-              CARVANA_APP_COSMOSDB_DATABASE_ALGO_CONTENT,
-              CARVANA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE,
+              CVNA_APP_COSMOSDB_SECRET_NAME,
+              CVNA_APP_COSMOSDB_SECRET_VERSION,
+              CVNA_APP_COSMOSDB_ACCOUNT_ALGO_CONTENT,
+              CVNA_APP_COSMOSDB_DATABASE_ALGO_CONTENT,
+              CVNA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE,
               getSecret
             } = this._connection;
             // console.log('retrieving credentials from keyvault');
-            // const CARVANA_APP_COSMOSDB_SECRET = await getSecret({secretName:CARVANA_APP_COSMOSDB_SECRET_NAME, secretVersion:CARVANA_APP_COSMOSDB_SECRET_VERSION});
+            const CVNA_APP_COSMOSDB_SECRET = await getSecret({secretName:CVNA_APP_COSMOSDB_SECRET_NAME, secretVersion:CVNA_APP_COSMOSDB_SECRET_VERSION});
             // console.log('received keyvault creds');
-            // const connectionStringProperties = parseCosmosConnectionString(CARVANA_APP_COSMOSDB_SECRET);
+            // const connectionStringProperties = parseCosmosConnectionString(CVNA_APP_COSMOSDB_SECRET);
 
             
             this._cosmosClient = new CosmosClient({
-                endpoint: 'https://carvana-algocontent-pkgopt-dev.documents.azure.com:443/',
-                key: 'l2K22p9hQ2vPKu23RDw9gjWp4tvGZ4df7J8KXhoqC8XsyZQkqdOiS1DEZtlzAoMGnEhpEZDlCROvmvcsOkL9Ig=='
+                endpoint: `https://${CVNA_APP_COSMOSDB_ACCOUNT_ALGO_CONTENT}.documents.azure.com:443/`,
+                key: CVNA_APP_COSMOSDB_SECRET
             })
             
             console.log('cosmos is ready');
-            this._database = await this._cosmosClient.database(CARVANA_APP_COSMOSDB_DATABASE_ALGO_CONTENT);
-            this._container = await this._database.container(CARVANA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE);
+            this._database = await this._cosmosClient.database(CVNA_APP_COSMOSDB_DATABASE_ALGO_CONTENT);
+            this._container = await this._database.container(CVNA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE);
             
             console.log('connecting to container');
             // this._container = await this._database.containers.createIfNotExists('packagesoptions-vehicle');

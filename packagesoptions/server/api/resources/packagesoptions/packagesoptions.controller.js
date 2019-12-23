@@ -25,7 +25,7 @@ export default {
     const emptyResponse = {};
     try {
       const {year, make, model} = req.query;
-      if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, response, req.params);
+      if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, emptyResponse, req.params);
 
       try{
 

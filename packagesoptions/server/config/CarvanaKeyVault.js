@@ -9,13 +9,13 @@ export class CarvanaKeyVault {
       const context = new AuthenticationContext(challenge.authorization);
 
       const {
-        CARVANA_APP_AZURE_CLIENT_ID,
-        CARVANA_APP_AZURE_CLIENT_SECRET
+        CVNA_APP_AZURE_CLIENT_ID,
+        CVNA_APP_AZURE_CLIENT_SECRET
       } = keyvaultConfig;
       return context.acquireTokenWithClientCredentials(
         challenge.resource,
-        CARVANA_APP_AZURE_CLIENT_ID,
-        CARVANA_APP_AZURE_CLIENT_SECRET,
+        CVNA_APP_AZURE_CLIENT_ID,
+        CVNA_APP_AZURE_CLIENT_SECRET,
         (err, tokenResponse) => {
           if (err) throw new Error(err);
 
@@ -45,15 +45,15 @@ export class CarvanaKeyVault {
 
   async getSecret(secret) {
     const {
-      CARVANA_APP_KEYVAULT_URL
+      CVNA_APP_KEYVAULT_URL
     } = this._keyvaultConfig;
     const {
       secretName,
       secretVersion
     } = secret;
     try {
-      console.log(CARVANA_APP_KEYVAULT_URL)
-      const secretResponse = await this._client.getSecret(CARVANA_APP_KEYVAULT_URL, secretName, secretVersion);
+      console.log(CVNA_APP_KEYVAULT_URL)
+      const secretResponse = await this._client.getSecret(CVNA_APP_KEYVAULT_URL, secretName, secretVersion);
       return secretResponse.value;
     } catch (error) {
       throw new Error(error);
