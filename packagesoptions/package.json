@@ -4,7 +4,7 @@
   "description": "Carvana AlgoContent PackagesOptions API",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=test && nodemon server/index.js --exec babel-node --presets @babel/preset-env",
+    "start": "export NODE_ENV=development && nodemon server/index.js --exec babel-node --presets @babel/preset-env",
     "serve": "node build/index.js",
     "build:base": "rm -rf ./build && babel server -d ./build --copy-files",
     "build:dev": "export NODE_ENV=development && npm run build:base",
