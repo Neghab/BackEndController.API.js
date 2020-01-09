@@ -52,7 +52,6 @@ export class CarvanaKeyVault {
       secretVersion
     } = secret;
     try {
-      console.log(CVNA_APP_KEYVAULT_URL)
       const secretResponse = await this._client.getSecret(CVNA_APP_KEYVAULT_URL, secretName, secretVersion);
       return secretResponse.value;
     } catch (error) {

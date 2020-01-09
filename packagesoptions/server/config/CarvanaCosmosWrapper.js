@@ -25,56 +25,59 @@ export class CarvanaCosmosWrapper {
         if(this._cosmosClient === null){
           try{
             const {
-              CVNA_APP_COSMOSDB_SECRET_NAME,
-              CVNA_APP_COSMOSDB_SECRET_VERSION,
+              CVNA_APP_COSMOSDB_RO_SECRET_NAME,
+              CVNA_APP_COSMOSDB_RO_SECRET_VERSION,
               CVNA_APP_COSMOSDB_ACCOUNT_ALGO_CONTENT,
               CVNA_APP_COSMOSDB_DATABASE_ALGO_CONTENT,
               CVNA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE,
               getSecret
             } = this._connection;
-            // console.log('retrieving credentials from keyvault');
-            const CVNA_APP_COSMOSDB_SECRET = await getSecret({secretName:CVNA_APP_COSMOSDB_SECRET_NAME, secretVersion:CVNA_APP_COSMOSDB_SECRET_VERSION});
-            // console.log('received keyvault creds');
-            // const connectionStringProperties = parseCosmosConnectionString(CVNA_APP_COSMOSDB_SECRET);
-
             
+            const CVNA_APP_COSMOSDB_SECRET = await getSecret({secretName:CVNA_APP_COSMOSDB_RO_SECRET_NAME, secretVersion:CVNA_APP_COSMOSDB_RO_SECRET_VERSION});
+             
             this._cosmosClient = new CosmosClient({
                 endpoint: `https://${CVNA_APP_COSMOSDB_ACCOUNT_ALGO_CONTENT}.documents.azure.com:443/`,
                 key: CVNA_APP_COSMOSDB_SECRET
             })
             
-            console.log('cosmos is ready');
+            
             this._database = await this._cosmosClient.database(CVNA_APP_COSMOSDB_DATABASE_ALGO_CONTENT);
             this._container = await this._database.container(CVNA_APP_COSMOSDB_COLLECTION_ALGO_CONTENT_VEHICLE);
             
-            console.log('connecting to container');
-            // this._container = await this._database.containers.createIfNotExists('packagesoptions-vehicle');
-            
             return this;
-          } catch(err) {
-            console.error(err);
+          } catch(error) {
+            splunkLogger.send({
+                message:{
+                    event: "Initialize connection to CosmosDB",
+                    error
+                }
+            });
           }
         }
         
         return this._cosmosClient;
     }
 
-    async query(querySpec) {
+    async query(query) {
         try {
-            console.log('attempting to query container');
-            console.log(this._container)
-            const cosmosResponse = await this._container.items.query(querySpec).fetchAll();
+            const cosmosResponse = await this._container.items.query(query).fetchAll();
 
             splunkLogger.send({
                 message:{
+                    query,
                     cosmosResponse
                 }
             });
 
             return cosmosResponse;
-        } catch (err) {
-            console.log(err);
-            return err;
+        } catch (error) {
+            splunkLogger.send({
+                message:{
+                    query,
+                    error
+                }
+            });
+            return error;
         }
     }
 
