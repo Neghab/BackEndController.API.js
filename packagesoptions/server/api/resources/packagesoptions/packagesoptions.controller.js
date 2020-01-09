@@ -1,13 +1,8 @@
-import Joi from '@hapi/joi';
-import {CosmosClient} from '@azure/cosmos';
-import {compose, filter, map, into, isNil, isEmpty} from 'ramda';
-import {pathOr} from '@carvana/futilities';
-// import cache from 'memory-cache';
-import atob from 'atob';
+import {isNil} from 'ramda';
 
 import {CarvanaKeyVault} from '../../../config/CarvanaKeyVault';
 import {CarvanaCosmosWrapper} from '../../../config/CarvanaCosmosWrapper';
-import {logAndReturn, sendSplunkLog} from '../../../logger';
+import {logAndReturn} from '../../../logger';
 import config from '../../../config/config';
 
 const keyvault = new CarvanaKeyVault(config);
