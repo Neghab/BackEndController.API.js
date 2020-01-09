@@ -4,8 +4,9 @@
   "description": "Carvana AlgoContent PackagesOptions API",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=development&&nodemon server/index.js --exec babel-node --presets @babel/preset-env",
+    "start": "export NODE_ENV=test && nodemon server/index.js --exec babel-node --presets @babel/preset-env",
     "serve": "node build/server.js",
+    "build:babel:test":"babel server -d build --source-maps inline --copy-files",
     "build:dev": "ignition build-server --mode=development --env.NODE_ENV=development --env-file=.env.development --config-file=ignition-config.js",
     "build:test": "ignition build-server --mode=test --env-file=.env.test --config-file=ignition-config.js",
     "build:uat": "ignition build-server --mode=uat --env-file=.env.uat --config-file=ignition-config.js",
@@ -20,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@azure/cosmos": "^3.5.2",
+    "@azure/cosmos": "^3.5.3",
     "@azure/ms-rest-nodeauth": "^2.0.1",
     "@babel/runtime": "7.0.0-beta.55",
     "@carvana/futilities": "^1.2.1",

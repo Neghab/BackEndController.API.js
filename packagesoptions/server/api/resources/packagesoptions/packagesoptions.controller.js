@@ -1,4 +1,5 @@
 import Joi from '@hapi/joi';
+import {CosmosClient} from '@azure/cosmos';
 import {compose, filter, map, into, isNil, isEmpty} from 'ramda';
 import {pathOr} from '@carvana/futilities';
 // import cache from 'memory-cache';
@@ -46,7 +47,7 @@ export default {
             }
           ]
         };
-
+        
         const cosmosResponse = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
         const {resources} = cosmosResponse;
             
