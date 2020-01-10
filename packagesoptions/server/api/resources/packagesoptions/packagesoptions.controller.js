@@ -5,6 +5,7 @@ import {CarvanaCosmosWrapper} from '../../../config/CarvanaCosmosWrapper';
 import {logAndReturn} from '../../../logger';
 import config from '../../../config/config';
 
+
 const keyvault = new CarvanaKeyVault(config);
 keyvault.init();
 

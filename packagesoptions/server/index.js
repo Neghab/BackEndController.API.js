@@ -2,13 +2,13 @@ import express from 'express';
 import cors from 'cors';
 // import {createHandler} from 'azure-function-express';
 import {restRouter} from './api';
-import {sendSplunkLog} from './logger';
+import {sendSplunkLog, logAndReturn} from './logger';
 import config from './config/config';
 
 const {CVNA_APP_APP_INSIGHTS_KEY} = config;
 
 const app = express();
-const PORT = process.env.PORT || 5997;
+const PORT = process.env.PORT || process.argv[2] || 5997;
 
 const appInsights = require('applicationinsights');
 
@@ -38,12 +38,8 @@ app.use((req, res, next) => {
 });
 
 app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  return res.json({
-    error: {
-      message: error.message,
-    },
-  });
+  // res.status(error.status || 500);
+  return logAndReturn(error.message, res, error.status, error, req);
 });
 
 app.listen(PORT, () => {

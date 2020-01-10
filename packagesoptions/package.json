@@ -4,13 +4,12 @@
   "description": "Carvana AlgoContent PackagesOptions API",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=development && nodemon server/index.js --exec babel-node --presets @babel/preset-env",
-    "serve": "node build/index.js",
-    "build:base": "rm -rf ./build && babel server -d ./build --copy-files",
-    "build:dev": "export NODE_ENV=development && npm run build:base",
-    "build:test": "export NODE_ENV=test && npm run build:base",
-    "build:uat": "export NODE_ENV=uat && npm run build:base",
-    "build:prod": "export NODE_ENV=production && npm run build:base",
+    "start": "cross-env NODE_ENV=development && LOCAL_DEV=true && nodemon server/index.js --exec babel-node --presets @babel/preset-env",
+    "serve": "node build/server.js",
+    "build:dev": "cross-env NODE_ENV=development webpack --mode=production",
+    "build:test": "cross-env NODE_ENV=test webpack --mode=production",
+    "build:uat": "cross-env NODE_ENV=uat webpack --mode=production",
+    "build:prod": "cross-env NODE_ENV=production webpack --mode=production",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:record": "cypress run --record",
@@ -38,7 +37,8 @@
     "express": "^4.16.4",
     "memory-cache": "^0.2.0",
     "ramda": "^0.26.1",
-    "splunk-logging": "^0.10.1"
+    "splunk-logging": "^0.10.1",
+    "yargs": "^15.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -52,6 +52,7 @@
     "btoa": "^1.2.1",
     "cross-env": "^6.0.3",
     "cypress": "^3.3.1",
+    "dotenv-webpack": "^1.7.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.11.0",
@@ -60,7 +61,7 @@
     "nodemon": "^1.18.11",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.14.3",
-    "webpack": "^4.41.2",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dotenv-plugin": "^2.1.0",
     "webpack-node-externals": "^1.7.2"
