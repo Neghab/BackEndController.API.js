@@ -21,32 +21,46 @@ export default {
   async getPackagesOptionsByYMM(req, res) {
     const emptyResponse = {};
     try {
-      const {year, make, model} = req.query;
+      const {year, make, model, trim} = req.query;
       if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, emptyResponse, req.params);
 
       try{
+        let query = "SELECT * FROM c WHERE c.year=@year and c.make_url_segment=@make and c.model_url_segment=@model";
+        
+        let parameters = [
+          {
+            name: "@year",
+            value: parseInt(year)
+          },
+          {
+            name: "@make",
+            value: `${String(make).toLowerCase()}`
+          },
+          {
+            name: "@model",
+            value: `${String(model).toLowerCase()}`
+          }
+        ];
+        
+        
+        if (trim !== undefined && trim !== null) {
+          query += " and c.trim_url_segment = @trim";
+          parameters.push({
+            name: "@trim",
+            value: String(trim).toLowerCase()
+          })
+        } else {
+          query += " and not is_defined(c.trim_url_segment)";
+        }
 
         const packagesOptionsByYMMQuerySpec = {
-          query: "SELECT * FROM c WHERE c.year=@year and c.make=@make and c.model=@model",
-          parameters: [
-            {
-              name: "@year",
-              value: parseInt(year)
-            },
-            {
-              name: "@make",
-              value: `${capitalize(make)}`
-            },
-            {
-              name: "@model",
-              value: `${capitalize(model)}`
-            }
-          ]
+          query,
+          parameters
         };
         
         const cosmosResponse = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
         const {resources} = cosmosResponse;
-            
+        
         return logAndReturn("PackagesOptions YMM Success", res, 200, resources, {query: req.params, cosmosResponse});
       }catch(err){
         return logAndReturn(err, res, 400, emptyResponse, req);
