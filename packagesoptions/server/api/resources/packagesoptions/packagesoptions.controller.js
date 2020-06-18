@@ -22,9 +22,7 @@ export default {
     const emptyResponse = {};
     try {
       const {year, make, model, trim} = req.query;
-      console.log(year,make,model);
       if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, emptyResponse, req.params);
-      console.log('got here from query');
       try{
         let query = "SELECT * FROM c WHERE c.year=@year and c.make_url_segment=@make and c.model_url_segment=@model";
         
@@ -62,7 +60,6 @@ export default {
         const cosmosResponse = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
         
         const {resources} = cosmosResponse;
-        console.log(resources);
         return logAndReturn("PackagesOptions YMM Success", res, 200, resources, {query: req.params, cosmosResponse});
       }catch(err){
         return logAndReturn(err, res, 400, emptyResponse, req);
@@ -73,7 +70,6 @@ export default {
   },
 
   async queryTest(req, res) {
-    console.log('test');
     const emptyResponse = {};
     let response = emptyResponse;
     try {
@@ -85,7 +81,6 @@ export default {
         const packagesOptionsByYMMQuerySpec = {
           query: "SELECT * FROM c where c.year=2019 and c.make='Audi' and c.model='A4'"
         };
-        console.log('the query from the controller: ', packagesOptionsByYMMQuerySpec)
         response = await cosmosClient.query(JSON.stringify(packagesOptionsByYMMQuerySpec));
         return logAndReturn("PackagesOptions YMM **TEST** Success", res, 200, response, req.params)
       }catch(err){
