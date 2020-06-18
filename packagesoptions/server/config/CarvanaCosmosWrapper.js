@@ -34,7 +34,7 @@ export class CarvanaCosmosWrapper {
             } = this._connection;
             
             const CVNA_APP_COSMOSDB_SECRET = await getSecret({secretName:CVNA_APP_COSMOSDB_RO_SECRET_NAME, secretVersion:CVNA_APP_COSMOSDB_RO_SECRET_VERSION});
-             
+            
             this._cosmosClient = new CosmosClient({
                 endpoint: `https://${CVNA_APP_COSMOSDB_ACCOUNT_ALGO_CONTENT}.documents.azure.com:443/`,
                 key: CVNA_APP_COSMOSDB_SECRET

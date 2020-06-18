@@ -22,8 +22,9 @@ export default {
     const emptyResponse = {};
     try {
       const {year, make, model, trim} = req.query;
+      console.log(year,make,model);
       if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, emptyResponse, req.params);
-
+      console.log('got here from query');
       try{
         let query = "SELECT * FROM c WHERE c.year=@year and c.make_url_segment=@make and c.model_url_segment=@model";
         
@@ -59,8 +60,9 @@ export default {
         };
         
         const cosmosResponse = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
-        const {resources} = cosmosResponse;
         
+        const {resources} = cosmosResponse;
+        console.log(resources);
         return logAndReturn("PackagesOptions YMM Success", res, 200, resources, {query: req.params, cosmosResponse});
       }catch(err){
         return logAndReturn(err, res, 400, emptyResponse, req);

@@ -6,5 +6,9 @@
     "js": "babel-node"
   },
   "execArgs": ["-r", "node_modules/@carvana/babel/lib/register"],
-  "watch": "./server"
+  "watch": "./server",
+  "env": {
+    "LOCAL_DEV": "true",
+    "NODE_ENV": "development"
+  }
 }

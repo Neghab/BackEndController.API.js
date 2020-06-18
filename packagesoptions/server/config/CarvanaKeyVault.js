@@ -28,13 +28,11 @@ export class CarvanaKeyVault {
     });
 
     this.init = this.init.bind(this);
-    this.getSecret = this.getSecret.bind(this);
   }
 
-  init() {
+  async init() {
     const prms = new Promise(async resolve => {
       this._client = new KeyVaultClient(this._credentials);
-
       this.getSecret = this.getSecret.bind(this);
 
       resolve();
