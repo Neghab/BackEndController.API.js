@@ -189,6 +189,7 @@ ClientBin/
 *.publishsettings
 node_modules/
 orleans.codegen.cs
+.history/
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -256,3 +257,13 @@ ModelManifest.xml
 ._*.jpg
 logs/
 .idea/
+
+Carvana\.Assets/
+brochureScript/assests/brochures/thumbnails/*
+brochureScript/assests/brochures/pdfs/*
+brochureScript/brochures/*
+brochureScript/corrupted-pdfs
+brochureScript/__pycache__/
+brochureScript/env/
+
+

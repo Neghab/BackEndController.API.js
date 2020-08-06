@@ -1,0 +1,238 @@
+stock_number,vehicle_id,vex_id,created_at,name,description,package_name,price,photo_url
+2000411158,1437392,6591,2020-05-05 22:53:36,10 Beats Premium Speakers with Subwoofer,NULL,Rallye Group,1195,https://cvnavexgateway.blob.core.windows.net/vex-6591/details/161863.jpg
+2000411158,1437392,6591,2020-05-05 22:53:36,3D GPS Navigation,NULL,Navigation / Rear Back-Up Camera Group,995,https://cvnavexgateway.blob.core.windows.net/vex-6591/details/161868.jpg
+2000473510,1363426,6592,2020-05-05 22:56:45,Navigation System,Navigation system,Navigation System,1950,https://cvnavexgateway.blob.core.windows.net/vex-6592/details/161897.jpg
+2000473510,1363426,6592,2020-05-05 22:56:45,Heated Seats,NULL,Heated Seats,500,https://cvnavexgateway.blob.core.windows.net/vex-6592/details/161894.jpg
+2000497943,1386405,28808,2020-05-26 21:40:15,Heated Steering Wheel,NULL,Cold Climate Package,1000,https://cvnavexgateway.blob.core.windows.net/vex-28808/details/300678.jpg
+2000499151,1392287,27939,2020-05-22 11:15:04,Navigation,Navigation Package NavTraffic & NavWeather,Premium Plus Package,3000,https://cvnavexgateway.blob.core.windows.net/vex-27939/details/278668.jpg
+2000502584,1388865,6540,2020-05-05 17:37:47,Chevrolet   MyLink   radio with navigation,Chevrolet MyLink radio with navigation,Chevrolet   MyLink   radio with Navigation,895,https://cvnavexgateway.blob.core.windows.net/vex-6540/details/160530.jpg
+2000502584,1388865,6540,2020-05-05 17:37:47,Heated driver and front-passenger leather seats,NULL,Premium Trim Package,1395,https://cvnavexgateway.blob.core.windows.net/vex-6540/details/160526.jpg
+2000504352,1392741,25549,2020-05-15 17:05:40,Backup Camera,ParkSense Rear Park Assist System,Technology Group,995,https://cvnavexgateway.blob.core.windows.net/vex-25549/details/215632.jpg
+2000504352,1392741,25549,2020-05-15 17:05:40,Heated Seats,Heated Front Seats,Limited Special Edition Group,1810,https://cvnavexgateway.blob.core.windows.net/vex-25549/details/215633.jpg
+2000504352,1392741,25549,2020-05-15 17:05:40,Universal Garage Door Opener,NULL,Limited Special Edition Group,1810,https://cvnavexgateway.blob.core.windows.net/vex-25549/details/215628.jpg
+2000504352,1392741,25549,2020-05-15 17:05:40,Power Express Open / Close Sunroof,Power Express Open / Close Sunroof,Limited Special Edition Group,1810,https://cvnavexgateway.blob.core.windows.net/vex-25549/details/215640.jpg
+2000522065,1403596,25640,2020-05-15 22:19:24,Power Express Open / Close Sunroof,Power Express Open / Close Sunroof,Limited Special Edition Group,1810,https://cvnavexgateway.blob.core.windows.net/vex-25640/details/217776.jpg
+2000522065,1403596,25640,2020-05-15 22:19:24,Heated Steering Wheel,NULL,Limited Special Edition Group,1810,https://cvnavexgateway.blob.core.windows.net/vex-25640/details/217772.jpg
+2000522065,1403596,25640,2020-05-15 22:19:24,Heated Seats,Heated Front Seats,Limited Special Edition Group,1810,https://cvnavexgateway.blob.core.windows.net/vex-25640/details/217773.jpg
+2000526612,1413516,28848,2020-05-26 22:01:32,Backup Camera,"Rear Vision Camera that projects an image of the area immediately behind the vehicle on the 8"" diagonal color display screen when the vehicle is placed in reverse",Convenience Package,1045,https://cvnavexgateway.blob.core.windows.net/vex-28848/details/301678.jpg
+2000526612,1413516,28848,2020-05-26 22:01:32,Universal Garage Door Opener,"Universal Home Remote that allows the driver to operate a garage door, security gate or home lighting using a transmitter from inside the vehicle",Convenience Package,1045,https://cvnavexgateway.blob.core.windows.net/vex-28848/details/301676.jpg
+2000529140,1439796,25643,2020-05-15 22:23:33,CONVENIENCE PACKAGE,NULL,Convenience Package,1850,https://cvnavexgateway.blob.core.windows.net/vex-25643/details/217841.jpg
+2000529140,1439796,25643,2020-05-15 22:23:33,CONVENIENCE PACKAGE,NULL,Convenience Package,1850,https://cvnavexgateway.blob.core.windows.net/vex-25643/details/217843.jpg
+2000529140,1439796,25643,2020-05-15 22:23:33,CONVENIENCE PACKAGE,NULL,Convenience Package,1850,https://cvnavexgateway.blob.core.windows.net/vex-25643/details/217847.jpg
+2000529947,1439914,28787,2020-05-26 21:28:42,Heated Seats,NULL,Xle Extra Value PKG #2,740,https://cvnavexgateway.blob.core.windows.net/vex-28787/details/300145.jpg
+2000532452,1414299,28817,2020-05-26 21:44:56,Heated Seats,Heated Front Seats,Convenience Package,1300,https://cvnavexgateway.blob.core.windows.net/vex-28817/details/300884.jpg
+2000532452,1414299,28817,2020-05-26 21:44:56,Seat Controls,Driver 8-way power front seat adjuster,Convenience Package,1300,https://cvnavexgateway.blob.core.windows.net/vex-28817/details/300888.jpg
+2000532692,1417893,25550,2020-05-15 17:19:35,Heated Seats,Heated Front Seats,SE COLD WEATHER PACKAGE,490,https://cvnavexgateway.blob.core.windows.net/vex-25550/details/215668.jpg
+2000535454,1417123,6586,2020-05-05 22:26:12,Navigation,Garmin Navigation System,Sun / Sound Group,1540,https://cvnavexgateway.blob.core.windows.net/vex-6586/details/161718.jpg
+2000536327,1416457,25638,2020-05-15 22:17:33,Seat Controls,8 Way PWR Driver Seat,NULL,440,https://cvnavexgateway.blob.core.windows.net/vex-25638/details/217732.jpg
+2000539671,1445967,28073,2020-05-22 22:04:09,Backup Camera,NULL,Power Convenience Package,1425,https://cvnavexgateway.blob.core.windows.net/vex-28073/details/281992.jpg
+2000539671,1445967,28073,2020-05-22 22:04:09,Seat Controls,8-way power driver seat,Power Convenience Package,1425,https://cvnavexgateway.blob.core.windows.net/vex-28073/details/281990.jpg
+2000539671,1445967,28073,2020-05-22 22:04:09,Universal Garage Door Opener,Universal Home Remote,Power Convenience Package,1425,https://cvnavexgateway.blob.core.windows.net/vex-28073/details/281993.jpg
+2000540614,1442731,28759,2020-05-26 21:19:57,Heated Steering Wheel,NULL,NULL,195,https://cvnavexgateway.blob.core.windows.net/vex-28759/details/299535.jpg
+2000540614,1442731,28759,2020-05-26 21:19:57,Heated & Cooled Seats,Heated and cooled driver and passenger seats,NULL,395,https://cvnavexgateway.blob.core.windows.net/vex-28759/details/299539.jpg
+2000540614,1442731,28759,2020-05-26 21:19:57,Navigation System,Navigation system,NULL,795,https://cvnavexgateway.blob.core.windows.net/vex-28759/details/299534.jpg
+2000540614,1442731,28759,2020-05-26 21:19:57,Blind Spot Warning,Blind spot system w/ cross-traffic alert,DRIVER ASSIST PACKAGE,1140,https://cvnavexgateway.blob.core.windows.net/vex-28759/details/299537.jpg
+2000540614,1442731,28759,2020-05-26 21:19:57,MOON ROOF W/UNIV GAR DR OPENER,NULL,NULL,1095,https://cvnavexgateway.blob.core.windows.net/vex-28759/details/299540.jpg
+2000540614,1442731,28759,2020-05-26 21:19:57,Lane Departure,Lane keeping system,DRIVER ASSIST PACKAGE,1140,https://cvnavexgateway.blob.core.windows.net/vex-28759/details/299538.jpg
+2000541562,1437147,25594,2020-05-15 19:08:45,Heated Seats,Heated Front Seats,GLS Popular Equipment Package,1220,https://cvnavexgateway.blob.core.windows.net/vex-25594/details/216752.jpg
+2000541562,1437147,25594,2020-05-15 19:08:45,Backup Camera,NULL,GLS Popular Equipment Package,1220,https://cvnavexgateway.blob.core.windows.net/vex-25594/details/216745.jpg
+2000541562,1437147,25594,2020-05-15 19:08:45,Seat Controls,Power Driver Seat w/ Lumbar Support,GLS Popular Equipment Package,1220,https://cvnavexgateway.blob.core.windows.net/vex-25594/details/216737.jpg
+2000542195,1440045,25558,2020-05-15 17:49:04,Heated And Ventilated Front Seats,Heated and Ventilated Front Seats,EX Premium Package,3700,https://cvnavexgateway.blob.core.windows.net/vex-25558/details/215919.jpg
+2000542195,1440045,25558,2020-05-15 17:49:04,Blind Spot Detection System,NULL,EX Premium Package,3700,https://cvnavexgateway.blob.core.windows.net/vex-25558/details/215912.jpg
+2000542195,1440045,25558,2020-05-15 17:49:04,Navigation,"Navigation System with 8"" Display",EX Premium Package,3700,https://cvnavexgateway.blob.core.windows.net/vex-25558/details/215911.jpg
+2000542195,1440045,25558,2020-05-15 17:49:04,Sunroof,Panoramic Sunroof,EX Premium Package,3700,https://cvnavexgateway.blob.core.windows.net/vex-25558/details/215909.jpg
+2000542195,1440045,25558,2020-05-15 17:49:04,Rear Side Window Sunshades,NULL,EX Premium Audio Package,1200,https://cvnavexgateway.blob.core.windows.net/vex-25558/details/215907.jpg
+2000542559,1424943,28826,2020-05-26 21:47:52,Tow Hitch,"Trailering hitch platform and 2"" receiver",Trailering Package,770,https://cvnavexgateway.blob.core.windows.net/vex-28826/details/301158.jpg
+2000542729,1425107,27435,2020-05-21 13:26:08,"Buick IntelliLink  with navigation and 7"" diagonal touch-screen display","Buick IntelliLink  with navigation and 7"" diagonal touch-screen display",NULL,495,https://cvnavexgateway.blob.core.windows.net/vex-27435/details/265439.jpg
+2000542729,1425107,27435,2020-05-21 13:26:08,Sunroof,Power tilt-sliding moonroof,Experience Buick Package,1395,https://cvnavexgateway.blob.core.windows.net/vex-27435/details/265442.jpg
+2000544821,1441082,28684,2020-05-26 20:54:41,Ltz White Diamond Edition,NULL,NULL,2045,https://cvnavexgateway.blob.core.windows.net/vex-28684/details/297835.jpg
+2000545410,1426210,25597,2020-05-15 19:14:15,Cold Weather Group,NULL,Cold Weather Group,645,https://cvnavexgateway.blob.core.windows.net/vex-25597/details/216825.jpg
+2000545410,1426210,25597,2020-05-15 19:14:15,Cold Weather Group,NULL,Cold Weather Group,645,https://cvnavexgateway.blob.core.windows.net/vex-25597/details/216827.jpg
+2000546079,1424933,25601,2020-05-15 19:23:44,DVD Player,2nd-Row Overhead DVD Console,Single DVD Entertainment,1495,https://cvnavexgateway.blob.core.windows.net/vex-25601/details/216918.jpg
+2000546079,1424933,25601,2020-05-15 19:23:44,Backup Camera,ParkView Rear Back-Up Camera,Single DVD Entertainment,1495,https://cvnavexgateway.blob.core.windows.net/vex-25601/details/216909.jpg
+2000548005,1440916,25583,2020-05-15 18:55:52,Charging Port,Quick Charge Port,Led + Quick Charge Package,1630,https://cvnavexgateway.blob.core.windows.net/vex-25583/details/216500.jpg
+2000549411,1440091,28610,2020-05-26 20:09:07,DualPane Panoramic Sunroof,Dual Pane Panoramic Sunroof,NULL,1795,https://cvnavexgateway.blob.core.windows.net/vex-28610/details/296092.jpg
+2000550187,1439744,6653,2020-05-06 3:18:37,DVD Player,"Rear seat entertainment system with Blu-ray playback and 9"" diagonal screen","Sun, Entertainment And Destinations Package",2760,https://cvnavexgateway.blob.core.windows.net/vex-6653/details/163376.jpg
+2000550187,1439744,6653,2020-05-06 3:18:37,Chevrolet   MyLink   radio with navigation,Chevrolet MyLink radio with navigation,"Sun, Entertainment And Destinations Package",2760,https://cvnavexgateway.blob.core.windows.net/vex-6653/details/163381.jpg
+2000550462,1434835,25622,2020-05-15 21:07:47,Jeep 75th Anniversary Package,NULL,Jeep 75th Anniversary Package 27F,1980,https://cvnavexgateway.blob.core.windows.net/vex-25622/details/217339.jpg
+2000550462,1434835,25622,2020-05-15 21:07:47,My Sky' Fixed / Removable Panels,My Sky Fixed / Removable Panels,Jeep 75th Anniversary Package 27F,1980,https://cvnavexgateway.blob.core.windows.net/vex-25622/details/217347.jpg
+2000550578,1434621,25571,2020-05-15 18:27:39,COMFORT GROUP,NULL,Comfort Group,895,https://cvnavexgateway.blob.core.windows.net/vex-25571/details/216233.jpg
+2000550578,1434621,25571,2020-05-15 18:27:39,COMFORT GROUP,NULL,Comfort Group,895,https://cvnavexgateway.blob.core.windows.net/vex-25571/details/216235.jpg
+2000550578,1434621,25571,2020-05-15 18:27:39,COMFORT GROUP,NULL,Comfort Group,895,https://cvnavexgateway.blob.core.windows.net/vex-25571/details/216237.jpg
+2000550578,1434621,25571,2020-05-15 18:27:39,DualPane Panoramic Sunroof,Dual Pane Panoramic Sunroof,NULL,1495,https://cvnavexgateway.blob.core.windows.net/vex-25571/details/216241.jpg
+2000552507,1434692,28615,2020-05-26 20:11:58,Backup Camera,Reverse Sensing System,EQUIPMENT GROUP 501A,1585,https://cvnavexgateway.blob.core.windows.net/vex-28615/details/296203.jpg
+2000553584,1432764,28650,2020-05-26 20:31:21,Heated Rear Seats,Heated outboard 2nd row seats,Premium Package,0,https://cvnavexgateway.blob.core.windows.net/vex-28650/details/297000.jpg
+2000553584,1432764,28650,2020-05-26 20:31:21,Heated & Ventilated Front Seats,Heated & Ventilated Front Seats,Premium Package,0,https://cvnavexgateway.blob.core.windows.net/vex-28650/details/296998.jpg
+2000553584,1432764,28650,2020-05-26 20:31:21,Navigation Package,Navigation Package,Premium Package,0,https://cvnavexgateway.blob.core.windows.net/vex-28650/details/296994.jpg
+2000554347,1438826,6594,2020-05-05 23:23:23,Cold Weather package,NULL,Cold Weather Package,1000,https://cvnavexgateway.blob.core.windows.net/vex-6594/details/161945.jpg
+2000554347,1438826,6594,2020-05-05 23:23:23,Cold Weather package,NULL,Cold Weather Package,1000,https://cvnavexgateway.blob.core.windows.net/vex-6594/details/161947.jpg
+2000554347,1438826,6594,2020-05-05 23:23:23,Cold Weather package,NULL,Cold Weather Package,1000,https://cvnavexgateway.blob.core.windows.net/vex-6594/details/161951.jpg
+2000554611,1440646,27975,2020-05-22 13:23:48,Sunroof,Power sunroof,NULL,900,https://cvnavexgateway.blob.core.windows.net/vex-27975/details/279660.jpg
+2000554611,1440646,27975,2020-05-22 13:23:48,Chevrolet MyLinkTM   with navigation,Chevrolet MyLinkTM with navigation,NULL,795,https://cvnavexgateway.blob.core.windows.net/vex-27975/details/279667.jpg
+2000554611,1440646,27975,2020-05-22 13:23:48,Universal Garage Door Opener,Universal Home Remote - no separate remote to store in the vehicle,Power Convenience Package,995,https://cvnavexgateway.blob.core.windows.net/vex-27975/details/279659.jpg
+2000554611,1440646,27975,2020-05-22 13:23:48,Lane Departure Warning - the system reads the lines in the road and will visually and audibly alert you if you start to stray out of your lane without using the turn signals,NULL,Safety Package,590,https://cvnavexgateway.blob.core.windows.net/vex-27975/details/279662.jpg
+2000554611,1440646,27975,2020-05-22 13:23:48,Seat Controls,8-way power passenger seat - with easy-to-reach and easy-to-operate seat adjuster for optimal seat position comfort,Power Convenience Package,995,https://cvnavexgateway.blob.core.windows.net/vex-27975/details/279665.jpg
+2000555093,1439697,25574,2020-05-15 18:34:39,"18"" PAINTED LUXURY WHEELS","18"" PAINTED LUXURY WHEELS",NULL,495,https://cvnavexgateway.blob.core.windows.net/vex-25574/details/216304.jpg
+2000555093,1439697,25574,2020-05-15 18:34:39,Heated Seats,Heated Front Seats,EQUIPMENT GROUP 205A,2375,https://cvnavexgateway.blob.core.windows.net/vex-25574/details/216302.jpg
+2000556023,1438899,25623,2020-05-15 21:26:42,Heated Seats,NULL,NULL,295,https://cvnavexgateway.blob.core.windows.net/vex-25623/details/217378.jpg
+2000556023,1438899,25623,2020-05-15 21:26:42,"17""X7"" CHROMED ALUM 18-SPOKE","17""X7"" CHROMED ALUM 18-SPOKE",NULL,695,https://cvnavexgateway.blob.core.windows.net/vex-25623/details/217382.jpg
+2000557049,1433696,25587,2020-05-15 18:59:33,Cold Weather package,NULL,Cold Weather package,500,https://cvnavexgateway.blob.core.windows.net/vex-25587/details/216593.jpg
+2000557413,1435335,28043,2020-05-22 21:02:28,Big Horn Package 22S,NULL,NULL,2700,https://cvnavexgateway.blob.core.windows.net/vex-28043/details/281265.jpg
+2000557413,1435335,28043,2020-05-22 21:02:28,Spray-In Bedliner,NULL,NULL,495,https://cvnavexgateway.blob.core.windows.net/vex-28043/details/281262.jpg
+2000558531,1436382,28844,2020-05-26 21:59:43,Heated Seats,NULL,WINTER PACKAGE,195,https://cvnavexgateway.blob.core.windows.net/vex-28844/details/301591.jpg
+2000559061,1440087,28662,2020-05-26 20:42:26,Tow Hitch,Trailering Package,Trailering Package,350,https://cvnavexgateway.blob.core.windows.net/vex-28662/details/297294.jpg
+2000559331,1438082,28836,2020-05-26 21:55:38,Uconnect Voice Command with Bluetooth,Uconnect Voice Command with Bluetooth,Convenience Group,1395,https://cvnavexgateway.blob.core.windows.net/vex-28836/details/301402.jpg
+2000559331,1438082,28836,2020-05-26 21:55:38,Number of Keys,This vehicle comes with  key(s). Keyless Entry with Panic Alarm,Convenience Group,1395,https://cvnavexgateway.blob.core.windows.net/vex-28836/details/301401.jpg
+2000559510,1441484,25406,2020-05-14 23:47:01,Backup Camera,NULL,NULL,450,https://cvnavexgateway.blob.core.windows.net/vex-25406/details/211857.jpg
+2000562060,1439033,25627,2020-05-15 21:30:21,POWER PANORAMA ROOF,POWER PANORAMA ROOF,NULL,1395,https://cvnavexgateway.blob.core.windows.net/vex-25627/details/217471.jpg
+2000562060,1439033,25627,2020-05-15 21:30:21,Tow Hitch,"TRAILER TOWING, CLASS II",NULL,395,https://cvnavexgateway.blob.core.windows.net/vex-25627/details/217467.jpg
+2000562060,1439033,25627,2020-05-15 21:30:21,PARKING TECHNOLOGY PACKAGE,NULL,PARKING TECHNOLOGY PACKAGE,995,https://cvnavexgateway.blob.core.windows.net/vex-25627/details/217463.jpg
+2000562060,1439033,25627,2020-05-15 21:30:21,PARKING TECHNOLOGY PACKAGE,NULL,PARKING TECHNOLOGY PACKAGE,995,https://cvnavexgateway.blob.core.windows.net/vex-25627/details/217466.jpg
+2000562148,1439154,25568,2020-05-15 18:22:43,Becker Map Pilot,NULL,Becker Map Pilot,600,https://cvnavexgateway.blob.core.windows.net/vex-25568/details/216162.jpg
+2000562148,1439154,25568,2020-05-15 18:22:43,Heated Seats,Heated Front Seats,NULL,750,https://cvnavexgateway.blob.core.windows.net/vex-25568/details/216174.jpg
+2000562164,1439155,28815,2020-05-26 21:43:47,Dual SkyScape(r) sunroof,NULL,NULL,1400,https://cvnavexgateway.blob.core.windows.net/vex-28815/details/300840.jpg
+2000562164,1439155,28815,2020-05-26 21:43:47,Rear entertainment system with USB port,NULL,NULL,1445,https://cvnavexgateway.blob.core.windows.net/vex-28815/details/300841.jpg
+2000562761,1439974,25646,2020-05-15 22:33:09,Power Express Open / Close Sunroof,Power Express Open / Close Sunroof,Customer Preferred Package 24G,1095,https://cvnavexgateway.blob.core.windows.net/vex-25646/details/217905.jpg
+2000562761,1439974,25646,2020-05-15 22:33:09,High Altitude Package,NULL,Customer Preferred Package 24G,1095,https://cvnavexgateway.blob.core.windows.net/vex-25646/details/217903.jpg
+2000562761,1439974,25646,2020-05-15 22:33:09,Seat Controls,Power 6-Way Driver Seat,Customer Preferred Package 24G,1095,https://cvnavexgateway.blob.core.windows.net/vex-25646/details/217911.jpg
+2000562859,1441263,44324,2020-06-18 17:12:41,Sunroof,Panoramic Sunroof,NULL,1500,https://cvnavexgateway.blob.core.windows.net/vex-44324/details/695690.jpg
+2000562859,1441263,44324,2020-06-18 17:12:41,Navigation,Navigation System w/ SIRIUSXM + Services,SX Premium Package,2900,https://cvnavexgateway.blob.core.windows.net/vex-44324/details/695693.jpg
+2000562859,1441263,44324,2020-06-18 17:12:41,Cooled Seats,Ventilated front seats,SX Premium Package,2900,https://cvnavexgateway.blob.core.windows.net/vex-44324/details/695689.jpg
+2000562910,1440770,27614,2020-05-21 18:04:20,Heated Rear Seats,Heated Second-Row Seats,Driver Convenience Group,430,https://cvnavexgateway.blob.core.windows.net/vex-27614/details/270160.jpg
+2000562949,1441267,28693,2020-05-26 20:57:27,Heated Steering Wheel,NULL,Cold Climate Convenience Package,1400,https://cvnavexgateway.blob.core.windows.net/vex-28693/details/298055.jpg
+2000562949,1441267,28693,2020-05-26 20:57:27,Heated Seats,Heated Front & Rear Seats,Cold Climate Convenience Package,1400,https://cvnavexgateway.blob.core.windows.net/vex-28693/details/298054.jpg
+2000562950,1441268,28046,2020-05-22 21:08:39,Blind Spot Warning,Blind Spot Monitoring w/Reverse Traffic Detect,Drive Package,900,https://cvnavexgateway.blob.core.windows.net/vex-28046/details/281325.jpg
+2000562950,1441268,28046,2020-05-22 21:08:39,Heated Seats,NULL,Front Climate Comfort & Visibility Package,1750,https://cvnavexgateway.blob.core.windows.net/vex-28046/details/281327.jpg
+2000562950,1441268,28046,2020-05-22 21:08:39,Heated Rear Seats,NULL,Front Climate Comfort & Visibility Package,1750,https://cvnavexgateway.blob.core.windows.net/vex-28046/details/281335.jpg
+2000562950,1441268,28046,2020-05-22 21:08:39,Sliding Panoramic Roof,Sliding Panoramic Roof,NULL,500,https://cvnavexgateway.blob.core.windows.net/vex-28046/details/281333.jpg
+2000563056,1440011,28602,2020-05-26 20:05:20,Sunroof,Power moonroof,NULL,895,https://cvnavexgateway.blob.core.windows.net/vex-28602/details/295927.jpg
+2000563671,1441662,28678,2020-05-26 20:51:56,Backup Camera,NULL,NULL,400,https://cvnavexgateway.blob.core.windows.net/vex-28678/details/297699.jpg
+2000563671,1441662,28678,2020-05-26 20:51:56,Navigation System,Navigation system,NULL,2150,https://cvnavexgateway.blob.core.windows.net/vex-28678/details/297700.jpg
+2000563850,1442300,28075,2020-05-22 22:11:45,GPS Navigation,GPS Navigation,Navigation Group,1095,https://cvnavexgateway.blob.core.windows.net/vex-28075/details/282049.jpg
+2000563867,1441280,25553,2020-05-15 17:34:54,Big Horn Package 26S,NULL,Big Horn Package 26S,2700,https://cvnavexgateway.blob.core.windows.net/vex-25553/details/215752.jpg
+2000563867,1441280,25553,2020-05-15 17:34:54,Trailer Brake Control,NULL,Trailer Tow Mirror and Brake Control Group,460,https://cvnavexgateway.blob.core.windows.net/vex-25553/details/215787.jpg
+2000563873,1441682,25630,2020-05-15 21:38:49,20-Inch x 9.0-Inch Aluminum Chrome Clad Wheels,20-Inch x 9.0-Inch Aluminum Chrome Clad Wheels,Express Value Package,2395,https://cvnavexgateway.blob.core.windows.net/vex-25630/details/217532.jpg
+2000563873,1441682,25630,2020-05-15 21:38:49,Bluetooth,Integrated Voice Command with Bluetooth,Express Value Package,2395,https://cvnavexgateway.blob.core.windows.net/vex-25630/details/217526.jpg
+2000563873,1441682,25630,2020-05-15 21:38:49,WheeltoWheel Side Steps,NULL,NULL,695,https://cvnavexgateway.blob.core.windows.net/vex-25630/details/217536.jpg
+2000563873,1441682,25630,2020-05-15 21:38:49,Tow Hitch,Class IV Receiver Hitch,NULL,345,https://cvnavexgateway.blob.core.windows.net/vex-25630/details/217541.jpg
+2000563927,1443506,25565,2020-05-15 18:21:26,Uconnect 8.4 NAV,NULL,Uconnect 8.4 NAV,1195,https://cvnavexgateway.blob.core.windows.net/vex-25565/details/216101.jpg
+2000563948,1441709,25659,2020-05-15 22:51:21,Heated Seats,Heated Front Seats,Heated Seats and Wheel Group,545,https://cvnavexgateway.blob.core.windows.net/vex-25659/details/218213.jpg
+2000563948,1441709,25659,2020-05-15 22:51:21,Big Horn Package 22S,NULL,NULL,2700,https://cvnavexgateway.blob.core.windows.net/vex-25659/details/218215.jpg
+2000563948,1441709,25659,2020-05-15 22:51:21,Heated Steering Wheel,NULL,Heated Seats and Wheel Group,545,https://cvnavexgateway.blob.core.windows.net/vex-25659/details/218209.jpg
+2000564033,1441779,28048,2020-05-22 21:14:59,Uconnect Voice Command with Bluetooth,Uconnect Voice Command with Bluetooth,Connectivity Group,695,https://cvnavexgateway.blob.core.windows.net/vex-28048/details/281393.jpg
+2000564033,1441779,28048,2020-05-22 21:14:59,Heated Seats,Heated Front Seats,Cold Weather Group,1395,https://cvnavexgateway.blob.core.windows.net/vex-28048/details/281394.jpg
+2000564144,1441285,25653,2020-05-15 22:39:34,Big Horn Package 22S,NULL,NULL,2700,https://cvnavexgateway.blob.core.windows.net/vex-25653/details/218049.jpg
+2000564174,1440200,25560,2020-05-15 18:03:42,Big Horn Package 22S,NULL,Big Horn Package 22S,2700,https://cvnavexgateway.blob.core.windows.net/vex-25560/details/215998.jpg
+2000564174,1440200,25560,2020-05-15 18:03:42,Uconnect 4C NAV with 8.4-Inch Display,Uconnect 4C NAV with 8.4-Inch Display,Uconnect 4C NAV with 8.4-Inch Display,795,https://cvnavexgateway.blob.core.windows.net/vex-25560/details/215986.jpg
+2000564222,1441226,25656,2020-05-15 22:46:15,Cold Weather package,NULL,Cold Weather Package,750,https://cvnavexgateway.blob.core.windows.net/vex-25656/details/218135.jpg
+2000564383,1441790,28645,2020-05-26 20:29:24,Uconnect Voice Command with Bluetooth,Uconnect Voice Command with Bluetooth,Connectivity Group,695,https://cvnavexgateway.blob.core.windows.net/vex-28645/details/296892.jpg
+2000564635,1441401,28694,2020-05-26 20:57:29,Universal Garage Door Opener,NULL,Security and Convenience Group,2000,https://cvnavexgateway.blob.core.windows.net/vex-28694/details/298087.jpg
+2000564635,1441401,28694,2020-05-26 20:57:29,Heated Steering Wheel,NULL,Security and Convenience Group,2000,https://cvnavexgateway.blob.core.windows.net/vex-28694/details/298086.jpg
+2000564635,1441401,28694,2020-05-26 20:57:29,Uconnect 4C NAV with 8.4-Inch Display,Uconnect 4C NAV with 8.4-Inch Display,18-Inch Wheel and 8.4-Inch Radio Group,1795,https://cvnavexgateway.blob.core.windows.net/vex-28694/details/298085.jpg
+2000564635,1441401,28694,2020-05-26 20:57:29,Heated Seats,Heated Front Seats,Security and Convenience Group,2000,https://cvnavexgateway.blob.core.windows.net/vex-28694/details/298081.jpg
+2000564853,1441466,28681,2020-05-26 20:53:26,High Altitude Package,NULL,Customer Preferred Package 24G,1045,https://cvnavexgateway.blob.core.windows.net/vex-28681/details/297763.jpg
+2000564853,1441466,28681,2020-05-26 20:53:26,Power Express Open / Close Sunroof,Power Express Open / Close Sunroof,Customer Preferred Package 24G,1045,https://cvnavexgateway.blob.core.windows.net/vex-28681/details/297760.jpg
+2000564853,1441466,28681,2020-05-26 20:53:26,Seat Controls,Power 6-Way Driver Seat,Customer Preferred Package 24G,1045,https://cvnavexgateway.blob.core.windows.net/vex-28681/details/297770.jpg
+2000564870,1441628,25591,2020-05-15 19:01:30,Sunroof,Power sunroof,NULL,1095,https://cvnavexgateway.blob.core.windows.net/vex-25591/details/216671.jpg
+2000564990,1443740,28052,2020-05-22 21:26:16,Blind Spot Warning,Blind Spot Warning (BSW),Driver's Assist Package,1020,https://cvnavexgateway.blob.core.windows.net/vex-28052/details/281502.jpg
+2000564990,1443740,28052,2020-05-22 21:26:16,Navigation,"NissanConnectTM w/ Navigation & Mobile Apps 5.8"" Color Touch-Screen Display",Driver's Assist Package,1020,https://cvnavexgateway.blob.core.windows.net/vex-28052/details/281505.jpg
+2000565060,1441172,25556,2020-05-15 17:45:02,CommandView DualPane Panoramic Sunroof,CommandView Dual-Pane Panoramic Sunroof,NULL,1755,https://cvnavexgateway.blob.core.windows.net/vex-25556/details/215864.jpg
+2000565060,1441172,25556,2020-05-15 17:45:02,GPS Navigation,GPS Navigation,Uconnect 3C NAV with 8.4-Inch Display,1295,https://cvnavexgateway.blob.core.windows.net/vex-25556/details/215859.jpg
+2000565293,1442813,25603,2020-05-15 19:33:02,EyeSight + Navigation System + High Beam Assist + Reverse Auto Braking + HID Headlights,NULL,NULL,1995,https://cvnavexgateway.blob.core.windows.net/vex-25603/details/216968.jpg
+2000565364,1442239,28804,2020-05-26 21:37:39,Seat Controls,Power 8-Way Driver Seat / Manual Passenger Seat,Easy Collection 2,1600,https://cvnavexgateway.blob.core.windows.net/vex-28804/details/300579.jpg
+2000565364,1442239,28804,2020-05-26 21:37:39,Blind Spot Warning,Blind Spot and Cross Path Detection,Easy Collection 2,1600,https://cvnavexgateway.blob.core.windows.net/vex-28804/details/300586.jpg
+2000565364,1442239,28804,2020-05-26 21:37:39,Heated Seats,Heated Front Seats,Easy Collection 2,1600,https://cvnavexgateway.blob.core.windows.net/vex-28804/details/300581.jpg
+2000565364,1442239,28804,2020-05-26 21:37:39,Heated Steering Wheel,NULL,Easy Collection 2,1600,https://cvnavexgateway.blob.core.windows.net/vex-28804/details/300582.jpg
+2000565364,1442239,28804,2020-05-26 21:37:39,Backup Camera,ParkView Rear Back-Up Camera,Easy Collection 2,1600,https://cvnavexgateway.blob.core.windows.net/vex-28804/details/300580.jpg
+2000565640,1441334,25561,2020-05-15 18:17:34,Power moonroof with rear fixed skylight,Power moonroof with rear fixed skylight,NULL,1400,https://cvnavexgateway.blob.core.windows.net/vex-25561/details/216023.jpg
+2000565640,1441334,25561,2020-05-15 18:17:34,Navigation,Buick IntelliLink with Navigation,NULL,1240,https://cvnavexgateway.blob.core.windows.net/vex-25561/details/216025.jpg
+2000565674,1445817,27987,2020-05-22 14:14:42,Seat Controls,Power 8-Way Driver Seat / Manual Passenger Seat,Customer Preferred Package 23E,2000,https://cvnavexgateway.blob.core.windows.net/vex-27987/details/279986.jpg
+2000565696,1447078,28594,2020-05-26 20:00:42,Power Express Open / Close Sunroof,Power Express Open / Close Sunroof,Customer Preferred Package 23G,1045,https://cvnavexgateway.blob.core.windows.net/vex-28594/details/295775.jpg
+2000565696,1447078,28594,2020-05-26 20:00:42,Seat Controls,Power 6-Way Driver Seat,Customer Preferred Package 23G,1045,https://cvnavexgateway.blob.core.windows.net/vex-28594/details/295771.jpg
+2000565696,1447078,28594,2020-05-26 20:00:42,High Altitude Package,NULL,Customer Preferred Package 23G,1045,https://cvnavexgateway.blob.core.windows.net/vex-28594/details/295769.jpg
+2000565720,1441319,25393,2020-05-14 23:11:51,Seat Controls,Power 8-Way Driver Seat / Manual Passenger Seat,Customer Preferred Package 23E,2000,https://cvnavexgateway.blob.core.windows.net/vex-25393/details/211526.jpg
+2000565791,1446188,28771,2020-05-26 21:25:00,Navigation,Garmin Navigation System,Nav & Sun Group,1995,https://cvnavexgateway.blob.core.windows.net/vex-28771/details/299819.jpg
+2000565791,1446188,28771,2020-05-26 21:25:00,Universal Garage Door Opener,NULL,Nav & Sun Group,1995,https://cvnavexgateway.blob.core.windows.net/vex-28771/details/299813.jpg
+2000565795,1442832,25635,2020-05-15 22:10:14,DVD Player,Blu-ray / DVD Player,Uconnect Theater with Wireless Streaming,1995,https://cvnavexgateway.blob.core.windows.net/vex-25635/details/217668.jpg
+2000565819,1442499,25620,2020-05-15 21:05:22,Uconnect 4C NAV with 8.4-Inch Display,Uconnect 4C NAV with 8.4-Inch Display,18-Inch Wheel and 8.4-Inch Radio Group,1795,https://cvnavexgateway.blob.core.windows.net/vex-25620/details/217293.jpg
+2000565819,1442499,25620,2020-05-15 21:05:22,Seat Controls,Power 8-Way Driver Seat / Manual Passenger Seat,Customer Preferred Package 2BE,2000,https://cvnavexgateway.blob.core.windows.net/vex-25620/details/217302.jpg
+2000565821,1447980,28769,2020-05-26 21:24:06,Blind Spot Warning,Blind Spot and Cross Path Detection,Driver Confidence Group,1095,https://cvnavexgateway.blob.core.windows.net/vex-28769/details/299759.jpg
+2000565821,1447980,28769,2020-05-26 21:24:06,Backup Camera,ParkSense Rear Park Assist System,Driver Confidence Group,1095,https://cvnavexgateway.blob.core.windows.net/vex-28769/details/299762.jpg
+2000565822,1441203,28668,2020-05-26 20:46:50,CommandView DualPane Panoramic Sunroof,CommandView Dual-Pane Panoramic Sunroof,NULL,1755,https://cvnavexgateway.blob.core.windows.net/vex-28668/details/297456.jpg
+2000565836,1442179,28053,2020-05-22 21:28:40,Sunroof,Power sunroof,NULL,1095,https://cvnavexgateway.blob.core.windows.net/vex-28053/details/281531.jpg
+2000565836,1442179,28053,2020-05-22 21:28:40,GPS Navigation,GPS Navigation,Uconnect 8.4 NAV,1295,https://cvnavexgateway.blob.core.windows.net/vex-28053/details/281530.jpg
+2000565994,1441870,28699,2020-05-26 21:00:12,Navigation,Audi MMI Navigation plus with MMI touch,Premium Plus package,4000,https://cvnavexgateway.blob.core.windows.net/vex-28699/details/298228.jpg
+2000565994,1441870,28699,2020-05-26 21:00:12,Heated Rear Seats,Heated steering wheel and heated rear seats,Cold weather package,500,https://cvnavexgateway.blob.core.windows.net/vex-28699/details/298230.jpg
+2000566104,1442393,28746,2020-05-26 21:13:21,Navigation,NULL,NULL,0,https://cvnavexgateway.blob.core.windows.net/vex-28746/details/299233.jpg
+2000566104,1442393,28746,2020-05-26 21:13:21,Heated & Ventilated Front Seats,Heated & Ventilated Front Seats,NULL,0,https://cvnavexgateway.blob.core.windows.net/vex-28746/details/299238.jpg
+2000566104,1442393,28746,2020-05-26 21:13:21,Blind Spot Monitor With Rear Cross Traffic Alert Power Retracting/Auto Dimming Outer Mirrors,Blind Spot Monitor with Rear Cross-Traffic Alert power retracting/auto-dimming outer mirrors,NULL,0,https://cvnavexgateway.blob.core.windows.net/vex-28746/details/299232.jpg
+2000566132,1442396,28712,2020-05-26 21:04:51,Backup Camera,Top view camera system,Vision package,2000,https://cvnavexgateway.blob.core.windows.net/vex-28712/details/298523.jpg
+2000566132,1442396,28712,2020-05-26 21:04:51,Audi MMI Navigation pius with MMI touch,NULL,Premium Plus package,4000,https://cvnavexgateway.blob.core.windows.net/vex-28712/details/298516.jpg
+2000566132,1442396,28712,2020-05-26 21:04:51,Tow Hitch,Towing Package,NULL,550,https://cvnavexgateway.blob.core.windows.net/vex-28712/details/298503.jpg
+2000566132,1442396,28712,2020-05-26 21:04:51,Heated & Cooled Seats,Heated and ventilated front seats with four-way power lumbar,Warm weather package,1600,https://cvnavexgateway.blob.core.windows.net/vex-28712/details/298514.jpg
+2000566132,1442396,28712,2020-05-26 21:04:51,Rear heated Seats,Heated steering wheel and heated rear seats,Cold weather package,500,https://cvnavexgateway.blob.core.windows.net/vex-28712/details/298525.jpg
+2000566226,1442342,28776,2020-05-26 21:26:05,Navigation,Infiniti InTouchTM with Navigation and Voice Recognition,Premium Plus Package,1650,https://cvnavexgateway.blob.core.windows.net/vex-28776/details/299930.jpg
+2000566242,1441887,28672,2020-05-26 20:47:53,Navigation,Navigation System,Premium Plus Package,2000,https://cvnavexgateway.blob.core.windows.net/vex-28672/details/297550.jpg
+2000566242,1441887,28672,2020-05-26 20:47:53,Maple interior accents,NULL,Premium Package,700,https://cvnavexgateway.blob.core.windows.net/vex-28672/details/297533.jpg
+2000566330,1442369,28013,2020-05-22 16:23:27,Color Touch Navigation with IntelliLink,Color Touch Navigation with IntelliLink,NULL,495,https://cvnavexgateway.blob.core.windows.net/vex-28013/details/280647.jpg
+2000566330,1442369,28013,2020-05-22 16:23:27,Sunroof,Power sunroof,NULL,995,https://cvnavexgateway.blob.core.windows.net/vex-28013/details/280645.jpg
+2000566342,1442863,28796,2020-05-26 21:32:53,Backup Camera,"6.1"" touch-screen display w/integrated backup",Radio: Entune Display Audio,0,https://cvnavexgateway.blob.core.windows.net/vex-28796/details/300380.jpg
+2000566759,1441918,25625,2020-05-15 21:28:46,Sunroof,Power sunroof,NULL,1095,https://cvnavexgateway.blob.core.windows.net/vex-25625/details/217422.jpg
+2000566759,1441918,25625,2020-05-15 21:28:46,Uconnect 8.4 NAV,NULL,Uconnect 8.4 NAV,1295,https://cvnavexgateway.blob.core.windows.net/vex-25625/details/217425.jpg
+2000566837,1448469,28703,2020-05-26 21:02:30,GPS Navigation,GPS Navigation,Uconnect 8.4 NAV,1295,https://cvnavexgateway.blob.core.windows.net/vex-28703/details/298313.jpg
+2000566837,1448469,28703,2020-05-26 21:02:30,Sunroof,Power sunroof,NULL,1095,https://cvnavexgateway.blob.core.windows.net/vex-28703/details/298311.jpg
+2000566842,1446204,28736,2020-05-26 21:11:29,Sunroof,Power sunroof,NULL,1050,https://cvnavexgateway.blob.core.windows.net/vex-28736/details/299009.jpg
+2000566891,1448889,28676,2020-05-26 20:50:41,Blind Spot Warning,Blind Spot Warning (BSW),Sl Premium Package,2280,https://cvnavexgateway.blob.core.windows.net/vex-28676/details/297647.jpg
+2000566891,1448889,28676,2020-05-26 20:50:41,Power Sliding Moonroof,NULL,Sl Premium Package,2280,https://cvnavexgateway.blob.core.windows.net/vex-28676/details/297641.jpg
+2000566891,1448889,28676,2020-05-26 20:50:41,Lane Departure Warning,NULL,Platinum Package,570,https://cvnavexgateway.blob.core.windows.net/vex-28676/details/297639.jpg
+2000566947,1442105,28743,2020-05-26 21:12:44,CommandView DualPane Panoramic Sunroof,CommandView Dual-Pane Panoramic Sunroof,NULL,1755,https://cvnavexgateway.blob.core.windows.net/vex-28743/details/299151.jpg
+2000566947,1442105,28743,2020-05-26 21:12:44,GPS Navigation,GPS Navigation,Uconnect 8.4 NAV,1195,https://cvnavexgateway.blob.core.windows.net/vex-28743/details/299153.jpg
+2000566955,1444135,25657,2020-05-15 22:47:42,Hill Descent Control,NULL,5-Speed Automatic Transmission,1350,https://cvnavexgateway.blob.core.windows.net/vex-25657/details/218160.jpg
+2000566955,1444135,25657,2020-05-15 22:47:42,Heated Seats,Heated Front Seats,NULL,395,https://cvnavexgateway.blob.core.windows.net/vex-25657/details/218161.jpg
+2000567118,1441943,25389,2020-05-14 23:00:16,Backup Camera,NULL,LX SDR Popular Plus Package,1800,https://cvnavexgateway.blob.core.windows.net/vex-25389/details/211427.jpg
+2000567118,1441943,25389,2020-05-14 23:00:16,Infotainment System,UVO eServices Infotainment System,LX SDR Popular Plus Package,1800,https://cvnavexgateway.blob.core.windows.net/vex-25389/details/211432.jpg
+2000567123,1442263,28050,2020-05-22 21:22:27,Navigation,Infiniti InTouchTM with Navigation with Lane Guidance and 3D building graphics,Premium Plus Package,2900,https://cvnavexgateway.blob.core.windows.net/vex-28050/details/281445.jpg
+2000567123,1442263,28050,2020-05-22 21:22:27,Heated Steering Wheel,NULL,Premium Package,1800,https://cvnavexgateway.blob.core.windows.net/vex-28050/details/281446.jpg
+2000567123,1442263,28050,2020-05-22 21:22:27,Seat Memory System,"Dual occupant memory system for driver's seat, steering wheel and outside mirrors",Premium Package,1800,https://cvnavexgateway.blob.core.windows.net/vex-28050/details/281443.jpg
+2000567780,1446228,28708,2020-05-26 21:03:49,High Altitude Package,NULL,Customer Preferred Package 23G,1145,https://cvnavexgateway.blob.core.windows.net/vex-28708/details/298416.jpg
+2000567780,1446228,28708,2020-05-26 21:03:49,Power Express Open / Close Sunroof,Power Express Open / Close Sunroof,Customer Preferred Package 23G,1145,https://cvnavexgateway.blob.core.windows.net/vex-28708/details/298410.jpg
+2000568032,1442550,25584,2020-05-15 18:57:30,Seat Controls,Power Driver Seat w/ Power Lumbar Support,Popular Equipment Package,750,https://cvnavexgateway.blob.core.windows.net/vex-25584/details/216527.jpg
+2000568130,1442036,25596,2020-05-15 19:12:58,Seat Controls,Power Driver Seat w/ Power Lumbar Support,Popular Equipment Package,750,https://cvnavexgateway.blob.core.windows.net/vex-25596/details/216803.jpg
+2000568354,1444251,25654,2020-05-15 22:41:16,Hill Descent Control,NULL,5-Speed Automatic Transmission,1400,https://cvnavexgateway.blob.core.windows.net/vex-25654/details/218080.jpg
+2000568354,1444251,25654,2020-05-15 22:41:16,Connectivity Group,NULL,Connectivity Group,695,https://cvnavexgateway.blob.core.windows.net/vex-25654/details/218091.jpg
+2000568354,1444251,25654,2020-05-15 22:41:16,Tow Hitch,Trailer Tow with 4-Pin Connector Wiring,Trailer Tow Group,495,https://cvnavexgateway.blob.core.windows.net/vex-25654/details/218074.jpg
+2000568560,1443282,25631,2020-05-15 22:03:05,Hill Descent Control,NULL,5-Speed Automatic Transmission,1400,https://cvnavexgateway.blob.core.windows.net/vex-25631/details/217571.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Sunroof,Panoramic Sunroof,EX Premium Package,3300,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282316.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Backup Camera,NULL,EX Premium Package,3300,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282317.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Blind Spot Detection System,NULL,EX/SX Technology Package,2400,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282312.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Navigation,Navigation with SIRIUSXM + Services,EX/SX Technology Package,2400,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282315.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Heated Steering Wheel,NULL,EX Premium Package,3300,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282319.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Heated Outboard Rear Seats,NULL,EX Premium Package,3300,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282305.jpg
+2000568617,1442047,28088,2020-05-22 22:17:19,Heated And Ventilated Front Seats,Heated and Ventilated Front Seats,EX Premium Package,3300,https://cvnavexgateway.blob.core.windows.net/vex-28088/details/282311.jpg
+2000568651,1443287,25575,2020-05-15 18:37:35,Seat Controls,Power Driver Seat w/ Power Lumbar Support,Popular Equipment Package,750,https://cvnavexgateway.blob.core.windows.net/vex-25575/details/216333.jpg
+2000568826,1443300,25616,2020-05-15 21:02:06,CONVENIENCE PACKAGE,NULL,Convenience Package,650,https://cvnavexgateway.blob.core.windows.net/vex-25616/details/217212.jpg
+2000568826,1443300,25616,2020-05-15 21:02:06,Color Touch Navigation with IntelliLink,Color Touch Navigation with IntelliLink,NULL,495,https://cvnavexgateway.blob.core.windows.net/vex-25616/details/217215.jpg
+2000568993,1444873,28069,2020-05-22 21:51:58,Power moonroof with rear fixed skylight,Power moonroof with rear fixed skylight,NULL,1400,https://cvnavexgateway.blob.core.windows.net/vex-28069/details/281898.jpg
+2000569287,1442690,25633,2020-05-15 22:07:58,Backup Camera,Rearview Camera w/ Dynamic Guidelines,Popular Equipment Package,800,https://cvnavexgateway.blob.core.windows.net/vex-25633/details/217614.jpg
+2000569661,1446705,28636,2020-05-26 20:25:04,Seat Controls,Power 8-Way Driver Seat / Manual Passenger Seat,Customer Preferred Package 23E,2000,https://cvnavexgateway.blob.core.windows.net/vex-28636/details/296704.jpg
+2000569847,1445502,28656,2020-05-26 20:35:28,Moonroof,Moonroof,NULL,1000,https://cvnavexgateway.blob.core.windows.net/vex-28656/details/297136.jpg
+2000569847,1445502,28656,2020-05-26 20:35:28,Dim Mirror/Com w/Homelink,Dimming Mirror/Compass w/ Homelink,NULL,342,https://cvnavexgateway.blob.core.windows.net/vex-28656/details/297132.jpg
+2000569856,1443003,25541,2020-05-15 16:37:56,CommandView DualPane Panoramic Sunroof,CommandView Dual-Pane Panoramic Sunroof,NULL,1755,https://cvnavexgateway.blob.core.windows.net/vex-25541/details/215470.jpg
+2000569856,1443003,25541,2020-05-15 16:37:56,Uconnect 8.4 NAV,NULL,Uconnect 8.4 NAV,1195,https://cvnavexgateway.blob.core.windows.net/vex-25541/details/215467.jpg
+2000569893,1444909,28099,2020-05-22 22:29:50,Navigation,Infiniti Intouch With Navigation,Navigation Package,1850,https://cvnavexgateway.blob.core.windows.net/vex-28099/details/282559.jpg
+2000569893,1444909,28099,2020-05-22 22:29:50,Panoramic Moonroof,Panoramic Moonroof,Technology Package,2200,https://cvnavexgateway.blob.core.windows.net/vex-28099/details/282555.jpg
+2000569936,1443004,28056,2020-05-22 21:35:59,Universal Garage Door Opener,Universal Home Remote that allows you to program up to 3 different devices,Style and Technology Package,1250,https://cvnavexgateway.blob.core.windows.net/vex-28056/details/281589.jpg
+2000569936,1443004,28056,2020-05-22 21:35:59,Heated Seats,Heated driver and front passenger seats,Style and Technology Package,1250,https://cvnavexgateway.blob.core.windows.net/vex-28056/details/281588.jpg
+2000570461,1445004,28752,2020-05-26 21:17:22,Seat Controls,Power driver's seats w/ seatback pocket,GT PREMIUM PACKAGE,2600,https://cvnavexgateway.blob.core.windows.net/vex-28752/details/299371.jpg
+2000570461,1445004,28752,2020-05-26 21:17:22,Sunroof,Power glass sunroof w/ tilt and slide function,GT PREMIUM PACKAGE,2600,https://cvnavexgateway.blob.core.windows.net/vex-28752/details/299372.jpg
+2000571765,1448595,28790,2020-05-26 21:29:07,Heated Steering Wheel,NULL,Cold Weather Group,795,https://cvnavexgateway.blob.core.windows.net/vex-28790/details/300210.jpg
+2000571765,1448595,28790,2020-05-26 21:29:07,Heated Seats,Heated Front Seats,Cold Weather Group,795,https://cvnavexgateway.blob.core.windows.net/vex-28790/details/300214.jpg
+2000573138,1448193,28545,2020-05-26 18:16:18,Backup Camera,Rearview Camera w/ Dynamic Guidelines,Popular Equipment Package,800,https://cvnavexgateway.blob.core.windows.net/vex-28545/details/294493.jpg
+2000573477,1447053,28745,2020-05-26 21:13:19,Seat Memory System,Dual occupant memory system for driver's seat,Premium Package,900,https://cvnavexgateway.blob.core.windows.net/vex-28745/details/299197.jpg
+2000573477,1447053,28745,2020-05-26 21:13:19,Universal Garage Door Opener,Auto-dimming inside mirror with Homelink Universal Transceiver,Premium Package,900,https://cvnavexgateway.blob.core.windows.net/vex-28745/details/299193.jpg
+2000573477,1447053,28745,2020-05-26 21:13:19,Navigation,Navigation System,Premium Plus Package,2000,https://cvnavexgateway.blob.core.windows.net/vex-28745/details/299213.jpg
+2000573524,1446512,28726,2020-05-26 21:07:49,Moonroof,Moonroof,NULL,1050,https://cvnavexgateway.blob.core.windows.net/vex-28726/details/298789.jpg
+2000573595,1448087,28063,2020-05-22 21:48:18,DualPane Power Sunroof,Dual-Pane Power Sunroof,Premium Package,1495,https://cvnavexgateway.blob.core.windows.net/vex-28063/details/281772.jpg
+2000573793,1448785,28794,2020-05-26 21:30:54,Hill Descent Control,NULL,8-Speed Automatic Transmission,2000,https://cvnavexgateway.blob.core.windows.net/vex-28794/details/300316.jpg
+2000573793,1448785,28794,2020-05-26 21:30:54,GPS Navigation,GPS Navigation,Electronic Infotainment System Group,1495,https://cvnavexgateway.blob.core.windows.net/vex-28794/details/300319.jpg
+2000580084,1454915,44618,2020-06-18 22:14:49,Seat Controls,Power Driver Seat w/ Power Lumbar Support,Popular Equipment Package,750,https://cvnavexgateway.blob.core.windows.net/vex-44618/details/702721.jpg
