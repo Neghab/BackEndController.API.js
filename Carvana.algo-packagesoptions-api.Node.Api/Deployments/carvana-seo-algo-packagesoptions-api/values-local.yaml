@@ -1,0 +1,59 @@
+# Default values for Microservice.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+image:
+  repository: cvnaimagesdev.azurecr.io
+  pullPolicy: Always
+  name: carvana-seo-algo-packagesoptions-api
+  portname: containerhttp
+
+metadata:
+  namespace: default
+
+terminationGracePeriodSeconds: 30
+
+rollout:
+  maxSurge: 2
+  maxUnavailable: 0
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 70
+
+service:
+  type: ClusterIP
+  port: 80
+  targetport: 4000
+  portname: servicehttp
+  livenessUrl: /api/v1/liveness
+  readinessUrl: /api/v1/readiness
+  livenessTimeout: 10
+  livenessInitialDelay: 15
+  livenessPeriod: 30
+  readinessTimeout: 10
+  readinessInitialDelay: 15
+  readinessPeriod: 30
+
+ingress:
+  path: /algo-packagesoptions-api/
+
+resources:
+  requests:
+    memory: 100Mi
+    cpu: 200m
+  limits:
+    memory: 200Mi
+    cpu: 400m
+
+environment:
+  node_env: development
+  run_env: dev # RUN_ENV matches script in package.json
+
+pdb:
+  maxUnavailable: 1
+
+appdynamics:
+  applicationname: SEO-DEV

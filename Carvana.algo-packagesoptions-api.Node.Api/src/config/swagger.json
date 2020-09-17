@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Carvana NodeJS Template",
+    "description": "Example express server with routes",
+    "version": "1.0"
+  },
+  "host": "localhost:4000",
+  "basePath": "/api",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/protected": {
+      "post": {
+        "tags": [
+          "Protected Routes"
+        ],
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "description": "/api/protected",
+        "parameters": [],
+        "responses": {
+          "200": {},
+          "401": {
+            "description": "this is an example of a protect route via the CarvanaJWT module"
+          }
+        }
+      }
+    },
+    "/admin": {
+      "get": {
+        "tags": [
+          "Protected Routes"
+        ],
+        "x-swagger-router-controller": "home",
+        "operationId": "index",
+        "description": "/api/admin",
+        "parameters": [],
+        "responses": {
+          "200": {},
+          "401": {
+            "description": "this is an example of a protect route via the CarvanaJWT module"
+          }
+        }
+      }
+    },
+    "/v1/liveness": {
+      "get": {
+        "x-swagger-router-controller": "/liveness",
+        "operationId": "impossible",
+        "tags": [
+          "Liveness and Readiness Probes"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/v1/readiness": {
+      "get": {
+        "x-swagger-router-controller": "readiness",
+        "operationId": "impossible",
+        "tags": [
+          "Liveness and Readiness Probes"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {},
+          "500": {
+            "description": "Readiness check failed"
+          }
+        }
+      }
+    }
+  }
+}

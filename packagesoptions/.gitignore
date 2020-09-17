@@ -1,8 +1,0 @@
-node_modules
-build
-.idea
-.DS_Store
-dist
-docs.md
-.vscode
-.vs

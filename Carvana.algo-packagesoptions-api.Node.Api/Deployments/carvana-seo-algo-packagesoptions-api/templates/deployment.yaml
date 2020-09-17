@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Values.metadata.namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: {{ .Values.rollout.maxSurge }}
+      maxUnavailable: {{ .Values.rollout.maxUnavailable }}
+  progressDeadlineSeconds: 120
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{.Values.image.repository}}/{{ .Values.image.name }}:{{ .Chart.Version }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.service.livenessUrl }}
+            port: {{ .Values.service.targetport }}
+          timeoutSeconds: {{ .Values.service.livenessTimeout }}
+          initialDelaySeconds: {{ .Values.service.livenessInitialDelay }}
+          periodSeconds: {{ .Values.service.livenessPeriod }}
+        readinessProbe:
+          httpGet:
+            path: {{ .Values.service.readinessUrl }}
+            port: {{ .Values.service.targetport }}
+          timeoutSeconds: {{ .Values.service.readinessTimeout }}
+          initialDelaySeconds: {{ .Values.service.readinessInitialDelay }}
+          periodSeconds: {{ .Values.service.readinessPeriod }}
+        securityContext:
+          runAsUser: 1000
+          allowPrivilegeEscalation: false
+        envFrom:
+        - configMapRef:
+            name: {{ .Chart.Name }}
+        env:
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: APPDYNAMICS_AGENT_NODE_NAME
+          value: "{{ .Values.clusterName }}-{{ .Values.clusterRegion }}-$(MY_POD_NAME)"
+        - name: DEPLOY_TIME
+          value: {{ .Release.Time }}
+        - name: CHART_VERSION
+          value: {{ .Chart.Version }}
+        volumeMounts:
+        - name: internal-encryption-certificate
+          mountPath: /secrets/internal-encryption-certificate
+          readOnly: true           
+        resources:
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
+        ports:
+        - containerPort: {{ .Values.service.targetport }}
+          name: {{ .Values.image.portname }}
+      volumes:
+      - name: internal-encryption-certificate
+        secret:
+          secretName: internal-encryption-certificate      
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
