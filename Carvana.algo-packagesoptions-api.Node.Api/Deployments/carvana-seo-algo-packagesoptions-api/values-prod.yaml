@@ -19,7 +19,7 @@ rollout:
 
 hpa:
   minReplicas: 2
-  maxReplicas: 4
+  maxReplicas: 2
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 70
 
@@ -42,11 +42,11 @@ ingress:
 
 resources:
   requests:
-    memory: 1500Mi
-    cpu: 500m
+    memory: 750Mi
+    cpu: 250m
   limits:
-    memory: 1500Mi
-    cpu: 500m
+    memory: 750Mi
+    cpu: 250m
 
 environment:
   node_env: production
