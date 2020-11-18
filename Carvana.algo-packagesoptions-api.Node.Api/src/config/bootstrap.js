@@ -1,12 +1,8 @@
 import {configureLoggers} from './loggers';
 import {configureExpressInstance} from './express';
 import {envVariables as environmentVariables} from './env.variables';
-import {sendSplunkLogMessage} from './logger';
-
-const fs = require('fs');
 
 const {
-  redisEncryptedConnectionString,
   encryptedSample
 } = environmentVariables;
 
@@ -41,7 +37,6 @@ const decyptSettings = async config => {
   const decryptutil=new DecryptWrapper({
     inputs: {
       "hello_world": encryptedSample,
-      // "redis": redisEncryptedConnectionString
     }
   });
 
@@ -51,10 +46,8 @@ const decyptSettings = async config => {
         applicationLogger({ level: 'info', message: 'Initializing Decryption...' })
         const [
           decryptedHelloWorld,
-          // decryptedRedisConnectionString
         ] = await Promise.all([
           decryptutil.decryptHelloWorld(),
-          // decryptutil.decryptRedis(),
         ]);
 
         applicationLogger({ level: 'info', message: 'Decryption Completed.' })
@@ -64,7 +57,6 @@ const decyptSettings = async config => {
         return {
           decryptedValues: {
             decryptedHelloWorld,
-            // decryptedRedisConnectionString
           }
         };
       } catch (error) {
@@ -85,20 +77,6 @@ const decyptSettings = async config => {
   }
 };
 
-// const instantiateRedisClient = async config => {
-//   const { CarvanaCache, appServices: { serviceLoggers, decryptedValues } } = config
-//   const { decryptedRedisConnectionString } = decryptedValues;
-
-//   const _client = new CarvanaCache({ decryptedRedisConnectionString, serviceLoggers }).init();
-
-//   return {
-//     ...config,
-//     appServices: {
-//       ...config.appServices,
-//       asyncRedisClient: _client
-//     }
-//   }
-// }
 
 const initInMemoryCacheInstance = config => {
   const { CarvanaInMemoryCache, appServices: { serviceLoggers: { applicationLogger } } } = config;
@@ -136,7 +114,6 @@ export const configureServer = async (utils, services) => {
       configureExpressInstance,
       setInMemoryCacheValues,
       initInMemoryCacheInstance,
-      // instantiateRedisClient,
       decyptSettings,
       instantiateLoggers,
       () => services

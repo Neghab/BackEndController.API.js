@@ -72,30 +72,6 @@ export class DecryptWrapper {
     }
   }
 
-  async decryptRedis() {
-    const {
-      inputs: { redis }
-    } = this._azureConfig;
-
-    try {
-      return this.decrypt(redis).then(buffer => {
-        const _connection = (buffer.toString('utf-8')).split(',');
-        const hostAndPort = _connection[0].split(':');
-        const password = _connection[1].substring(9);
-        const ssl = _connection[2].substring(4) === 'True';
-        const abortConnect = _connection[3].substring(13) === 'True';
-        return {
-          host: hostAndPort[0],
-          port: parseInt(hostAndPort[1]),
-          password,
-          ssl,
-          abortConnect
-        };
-      });
-    } catch (error) {
-      throw new Error(error);
-    }
-  }
 
   async decrypt(source) {
       try {

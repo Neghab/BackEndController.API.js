@@ -7,11 +7,12 @@ const environmentVariables = Object.keys(dotenv.parsed).reduce((env, key) => {
 console.log(environmentVariables);
 
 const {
+    // splunk
     SPLUNK_TOKEN,
     SPLUNK_INDEX,
     SPLUNK_LOG_LEVEL,
     SPLUNK_URL,
-    REDIS_CONNECTION_STRING,
+
     AUTH_SERVER_URL,
     AUTH_ISS,
     AUTH_SCOPE,
@@ -30,27 +31,10 @@ const {
     APPDYNAMICS_AGENT_TIER_NAME,
     APPDYNAMICS_AGENT_NODE_NAME,
 
-    // splunk
-    CARVANA_APP_SPLUNK_URL,
-    CARVANA_APP_SPLUNK_TOKEN,
-
-    // elastic
-    CARVANA_APP_ELASTIC_USER,
-    CARVANA_APP_ELASTIC_URI,
-    CARVANA_APP_ELASTIC_PORT,
-    CARVANA_APP_AZURE_VAULT_ELASTIC_SECRET_NAME,
-    CARVANA_APP_AZURE_VAULT_ELASTIC_SECRET_VERSION,
-
     // keyvault
     CARVANA_APP_KEYVAULT_URL,
     CARVANA_APP_AZURE_CLIENT_ID,
     CARVANA_APP_AZURE_CLIENT_SECRET,
-
-    // redis
-    CARVANA_APP_REDIS_URI,
-    CARVANA_APP_REDIS_PORT,
-    CARVANA_APP_AZURE_VAULT_REDIS_SECRET_NAME,
-    CARVANA_APP_AZURE_VAULT_REDIS_SECRET_VERSION,
 
     // cosmos
     CARVANA_APP_COSMOSDB_RO_SECRET_NAME,
@@ -69,18 +53,22 @@ export const envVariables = {
     isDev,
     isUat,
     isTest,
+    isProduction,
+
+    // auth
     authAudiance: AUTH_AUD,
     authIssuer: AUTH_ISS,
     authScope: AUTH_SCOPE,
-    isProduction,
     authServerUrl: AUTH_SERVER_URL,
+
+    // splunk
     splunkURL: SPLUNK_URL,
-    environment: NODE_ENV,
     splunkToken: SPLUNK_TOKEN,
     splunkIndex: SPLUNK_INDEX,
-    PORT: PORT || 4000,
     splunkLogLevel: SPLUNK_LOG_LEVEL,
-    redisEncryptedConnectionString: REDIS_CONNECTION_STRING,
+
+    environment: NODE_ENV,
+    PORT: PORT || 4000,
 
     // appdynamics
     appDynamicsHost: APPDYNAMICS_CONTROLLER_HOST_NAME,
@@ -94,27 +82,10 @@ export const envVariables = {
 
     encryptedSample: ENCRYPTED_SAMPLE,
 
-    // splunk
-    CARVANA_APP_SPLUNK_URL,
-    CARVANA_APP_SPLUNK_TOKEN,
-
-    // elastic
-    CARVANA_APP_ELASTIC_USER,
-    CARVANA_APP_ELASTIC_URI,
-    CARVANA_APP_ELASTIC_PORT,
-    CARVANA_APP_AZURE_VAULT_ELASTIC_SECRET_NAME,
-    CARVANA_APP_AZURE_VAULT_ELASTIC_SECRET_VERSION,
-
     // keyvault
     CARVANA_APP_KEYVAULT_URL,
     CARVANA_APP_AZURE_CLIENT_ID,
     CARVANA_APP_AZURE_CLIENT_SECRET,
-
-    // redis
-    CARVANA_APP_REDIS_URI,
-    CARVANA_APP_REDIS_PORT,
-    CARVANA_APP_AZURE_VAULT_REDIS_SECRET_NAME,
-    CARVANA_APP_AZURE_VAULT_REDIS_SECRET_VERSION,
 
     // cosmos
     CARVANA_APP_COSMOSDB_RO_SECRET_NAME,

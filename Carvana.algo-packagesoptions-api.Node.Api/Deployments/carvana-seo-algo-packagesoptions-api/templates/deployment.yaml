@@ -54,13 +54,13 @@ spec:
         - name: APPDYNAMICS_AGENT_NODE_NAME
           value: "{{ .Values.clusterName }}-{{ .Values.clusterRegion }}-$(MY_POD_NAME)"
         - name: DEPLOY_TIME
-          value: {{ .Release.Time }}
+          value: "{{ now | unixEpoch }}"
         - name: CHART_VERSION
           value: {{ .Chart.Version }}
         volumeMounts:
         - name: internal-encryption-certificate
           mountPath: /secrets/internal-encryption-certificate
-          readOnly: true           
+          readOnly: true
         resources:
           requests:
             memory: {{ .Values.resources.requests.memory }}
@@ -74,5 +74,5 @@ spec:
       volumes:
       - name: internal-encryption-certificate
         secret:
-          secretName: internal-encryption-certificate      
+          secretName: internal-encryption-certificate
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}

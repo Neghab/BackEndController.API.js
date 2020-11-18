@@ -2,13 +2,13 @@ import { Logger } from 'splunk-logging';
 import {envVariables as environmentVariables} from './env.variables';
 import stringify from 'json-stringify-safe';
 
-const {CARVANA_APP_SPLUNK_TOKEN, CARVANA_APP_SPLUNK_URL} = environmentVariables;
+const {splunkToken, splunkURL} = environmentVariables;
 
 const serverSystemName = 'AlgoContent_PackagesOptionsAPI';
 
 export const splunkLogger = new Logger({
-  token: `${CARVANA_APP_SPLUNK_TOKEN}`,
-  url: `${CARVANA_APP_SPLUNK_URL}`,
+  token: `${splunkToken}`,
+  url: `${splunkURL}`,
   port: 443
 });
 
