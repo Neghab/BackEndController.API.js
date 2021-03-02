@@ -2,6 +2,7 @@ import {configureLoggers} from './loggers';
 import {configureExpressInstance} from './express';
 import {envVariables as environmentVariables} from './env.variables';
 import { CosmosDBService } from '../services/cosmosdb';
+import {sendSplunkLogMessage} from './logger';
 
 const {
   encryptedSample,
@@ -51,12 +52,16 @@ const decyptSettings = async config => {
           decryptedHelloWorld,
           decryptedCosmosDBConnectionString
         ] = await Promise.all([
-          decryptutil.decryptHelloWorld(),
+          // TODO: possibly remove hello world once we verify certs are present and working in prod
+          decryptutil.decryptHelloWorld().catch(e=> console.log('silent')),
           decryptutil.decryptCosmosDBConnectionString(),
-        ]);
+        ]).catch(error=>{
+          sendSplunkLogMessage(`error decrypting: ${error}`);
+          console.log(error);
+        });
 
         applicationLogger({ level: 'info', message: 'Decryption Completed.' })
-
+        sendSplunkLogMessage(`helloworld = ${decryptedHelloWorld}`);
         console.log(decryptedHelloWorld);
 
         if(!decryptedCosmosDBConnectionString){
@@ -71,6 +76,8 @@ const decyptSettings = async config => {
         };
       } catch (error) {
         applicationLogger({ level: 'error', message: JSON.stringify(error) });
+        console.log(error);
+
         return null;
       }
     });
@@ -83,7 +90,10 @@ const decyptSettings = async config => {
     }
   }
   catch (err) {
+    sendSplunkLogMessage(`error decrypting certs: ${error}`)
+    console.log(error);
     serviceLoggers.applicationLogger({ level: 'error', message: JSON.stringify(error) });
+    return config;
   }
 };
 
