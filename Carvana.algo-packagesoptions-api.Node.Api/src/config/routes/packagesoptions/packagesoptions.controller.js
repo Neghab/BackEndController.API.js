@@ -1,47 +1,54 @@
 import {isNil} from 'ramda';
 
-import {CarvanaKeyVault} from '../../../config/CarvanaKeyVault';
-import {CarvanaCosmosWrapper} from '../../../config/CarvanaCosmosWrapper';
+import {DBInstance} from '../../../config/CarvanaCosmosWrapper';
+
 import {logAndReturn} from '../../logger';
-import { envVariables as environmentVariables } from '../../env.variables';
 
-let config = environmentVariables;
+// const capitalize = s => {
+//   if (typeof s !== 'string') return ''
+//   return s.charAt(0).toUpperCase() + s.slice(1)
+// }
+const messages = {
+  someYMM: "Some YMM query params missing",
+  successYMM: "PackagesOptions YMM Success",
+  successTestYMM: "PackagesOptions YMM **TEST** Success",
+};
 
+const queries = {
+  ymm: "SELECT * FROM c WHERE c.year=@year and c.make_url_segment=@make and c.model_url_segment=@model",
+  test: "SELECT * FROM c where c.year=2019 and c.make='Audi' and c.model='A4'"
+};
 
-const keyvault = new CarvanaKeyVault(config);
-keyvault.init();
-
-const cosmosClient = new CarvanaCosmosWrapper({getSecret: keyvault.getSecret, ...config})
-cosmosClient.init();
-
-const capitalize = s => {
-  if (typeof s !== 'string') return ''
-  return s.charAt(0).toUpperCase() + s.slice(1)
-}
+const getParameters = (year, make, model) => ([
+  {
+    name: "@year",
+    value: parseInt(year)
+  },
+  {
+    name: "@make",
+    value: `${String(make).toLowerCase()}`
+  },
+  {
+    name: "@model",
+    value: `${String(model).toLowerCase()}`
+  }
+]);
 
 export default {
   async getPackagesOptionsByYMM(req, res) {
     const emptyResponse = {};
+
     try {
       const {year, make, model, trim} = req.query;
-      if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, emptyResponse, req.params);
-      try{
-        let query = "SELECT * FROM c WHERE c.year=@year and c.make_url_segment=@make and c.model_url_segment=@model";
 
-        let parameters = [
-          {
-            name: "@year",
-            value: parseInt(year)
-          },
-          {
-            name: "@make",
-            value: `${String(make).toLowerCase()}`
-          },
-          {
-            name: "@model",
-            value: `${String(model).toLowerCase()}`
-          }
-        ];
+      if(isNil(year) || isNil(make) || isNil(model)) {
+        return logAndReturn(messages.someYMM, res, 400, emptyResponse, req.params);
+      }
+
+      try{
+        let query = queries.ymm;
+
+        let parameters = getParameters(year, make, model);
 
 
         if (trim !== undefined && trim !== null) {
@@ -59,32 +66,43 @@ export default {
           parameters
         };
 
-        const cosmosResponse = await cosmosClient.query(packagesOptionsByYMMQuerySpec);
+        const db = DBInstance.instance;
+
+        const cosmosResponse = await db.query(packagesOptionsByYMMQuerySpec);
 
         const {resources} = cosmosResponse;
-        return logAndReturn("PackagesOptions YMM Success", res, 200, resources, {query: req.params, cosmosResponse});
+
+        return logAndReturn(messages.successYMM, res, 200, resources, {query: req.params, cosmosResponse});
       }catch(err){
         return logAndReturn(err, res, 400, emptyResponse, req);
       }
     } catch (err) {
-      return logAndReturn(`Critical Error: ${err}`, res, 500, err, req);
+        return logAndReturn(`Critical Error: ${err}`, res, 500, err, req);
     }
   },
 
   async queryTest(req, res) {
     const emptyResponse = {};
     let response = emptyResponse;
+
     try {
       const {year, make, model} = req.params;
-      if(isNil(year) || isNil(make) || isNil(model)) return logAndReturn("Some YMM query params missing", res, 400, response, req.params);
+
+      if(isNil(year) || isNil(make) || isNil(model)) {
+        return logAndReturn(messages.someYMM, res, 400, response, req.params);
+      }
 
       try{
 
         const packagesOptionsByYMMQuerySpec = {
-          query: "SELECT * FROM c where c.year=2019 and c.make='Audi' and c.model='A4'"
+          query: queries.test
         };
-        response = await cosmosClient.query(JSON.stringify(packagesOptionsByYMMQuerySpec));
-        return logAndReturn("PackagesOptions YMM **TEST** Success", res, 200, response, req.params)
+
+        const db = DBInstance.instance;
+
+        response = await db.query(JSON.stringify(packagesOptionsByYMMQuerySpec));
+
+        return logAndReturn(messages.successTestYMM, res, 200, response, req.params)
       }catch(err){
         return logAndReturn(err, res, 400, response, req);
       }

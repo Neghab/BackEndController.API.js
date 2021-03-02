@@ -95,6 +95,8 @@ docker build -t packagesoptionsapi:v1 .
 docker run --rm -v /Users/brandonculley/code/Carvana.AlgoContent/Carvana.AlgoContent.PackagesOptionsAPI/Carvana.algo-packagesoptions-api.Node.Api/Deployments/carvana-seo-algo-packagesoptions-api:/Deployments/carvana-seo-algo-packagesoptions-api -v /Users/brandonculley/code/secrets:/secrets/internal-encryption-certificate/ -p 4000:4000 packagesoptionsapi:v1
 
 http://localhost:4000/api/packagesoptions?make=toyota&model=sienna&year=2014
+http://localhost:4000/api/packagesoptions?make=audi&model=s5&year=2016
+
 http://localhost:4000/api/hello
 http://localhost:4000/api/secure2
 http://localhost:4000/api/v1/liveness

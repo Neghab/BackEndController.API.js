@@ -1,9 +1,11 @@
 import {configureLoggers} from './loggers';
 import {configureExpressInstance} from './express';
 import {envVariables as environmentVariables} from './env.variables';
+import { CosmosDBService } from '../services/cosmosdb';
 
 const {
-  encryptedSample
+  encryptedSample,
+  CVNA_APP_COSMOSDB_CONN_STRING_ENCRYPTED
 } = environmentVariables;
 
 const instantiateLoggers = config => {
@@ -37,6 +39,7 @@ const decyptSettings = async config => {
   const decryptutil=new DecryptWrapper({
     inputs: {
       "hello_world": encryptedSample,
+      "cosmos": CVNA_APP_COSMOSDB_CONN_STRING_ENCRYPTED
     }
   });
 
@@ -46,17 +49,24 @@ const decyptSettings = async config => {
         applicationLogger({ level: 'info', message: 'Initializing Decryption...' })
         const [
           decryptedHelloWorld,
+          decryptedCosmosDBConnectionString
         ] = await Promise.all([
           decryptutil.decryptHelloWorld(),
+          decryptutil.decryptCosmosDBConnectionString(),
         ]);
 
         applicationLogger({ level: 'info', message: 'Decryption Completed.' })
 
         console.log(decryptedHelloWorld);
 
+        if(!decryptedCosmosDBConnectionString){
+          sendSplunkLogMessage(`could not decrypt cosmosdb connection}`);
+        }
+
         return {
           decryptedValues: {
             decryptedHelloWorld,
+            decryptedCosmosDBConnectionString
           }
         };
       } catch (error) {
@@ -77,6 +87,23 @@ const decyptSettings = async config => {
   }
 };
 
+const instantiateCosmosDBClient = async config => {
+  const { CarvanaCache, appServices: { serviceLoggers, decryptedValues } } = config
+  const { decryptedCosmosDBConnectionString } = decryptedValues;
+
+  const db = new CosmosDBService({ decryptedCosmosDBConnectionString });
+  const _client = await db.init();
+
+  // don't await just let it ride
+  // bootstrapDB();
+
+  return {
+    ...config,
+    appServices: {
+      ...config.appServices,
+    }
+  }
+}
 
 const initInMemoryCacheInstance = config => {
   const { CarvanaInMemoryCache, appServices: { serviceLoggers: { applicationLogger } } } = config;
@@ -114,6 +141,7 @@ export const configureServer = async (utils, services) => {
       configureExpressInstance,
       setInMemoryCacheValues,
       initInMemoryCacheInstance,
+      instantiateCosmosDBClient,
       decyptSettings,
       instantiateLoggers,
       () => services

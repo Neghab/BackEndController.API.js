@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const fs = require('fs');
 const NodeRSA = require('node-rsa');
 const certFilePath = '/secrets/internal-encryption-certificate/cert-private.pem';
@@ -8,49 +7,46 @@ const CarvanaDecryptUtil = require('@carvana/node-decrypt');
 // const certFilePath = '/Users/brandonculley/code/secrets/cert-private.pem';
 
 export class DecryptWrapper {
-
   constructor(azureConfig) {
     this._azureConfig = {
-      inputs: azureConfig.inputs
+      inputs: azureConfig.inputs,
     };
     this.init = this.init.bind(this);
     this.decryptUtility = new CarvanaDecryptUtil(certFilePath);
   }
 
-  init(){
-        const prms = new Promise(resolve => {
+  init() {
+    const prms = new Promise((resolve) => {
       fs.readFile(certFilePath, (err, keyData) => {
-        this._key=keyData;
+        this._key = keyData;
         resolve(keyData);
       });
-
     });
     return prms;
   }
 
   async decryptHelloWorld() {
     const {
-      inputs: { hello_world }
+      inputs: { hello_world },
     } = this._azureConfig;
 
     try {
-
-      const testDecrypt = this.decrypt(hello_world).then(buffer => buffer.toString('utf-8'))
+      const testDecrypt = this.decrypt(hello_world).then((buffer) =>
+        buffer.toString('utf-8')
+      );
       return testDecrypt;
     } catch (error) {
       throw new Error(error);
     }
   }
 
-
-
   async decryptAzureClientSecret() {
     const {
-      inputs: { azureClientSecret }
+      inputs: { azureClientSecret },
     } = this._azureConfig;
 
     try {
-      return this.decrypt(azureClientSecret).then(buffer =>
+      return this.decrypt(azureClientSecret).then((buffer) =>
         buffer.toString('utf-8')
       );
     } catch (error) {
@@ -60,11 +56,11 @@ export class DecryptWrapper {
 
   async decryptIdentityServerScopeSecret() {
     const {
-      inputs: { identityServerScopeSecret }
+      inputs: { identityServerScopeSecret },
     } = this._azureConfig;
 
     try {
-      return this.decrypt(identityServerScopeSecret).then(buffer =>
+      return this.decrypt(identityServerScopeSecret).then((buffer) =>
         buffer.toString('utf-8')
       );
     } catch (error) {
@@ -72,13 +68,24 @@ export class DecryptWrapper {
     }
   }
 
+  async decryptCosmosDBConnectionString() {
+    const {
+      inputs: { cosmos },
+    } = this._azureConfig;
+
+    try {
+      return this.decrypt(cosmos).then((buffer) => buffer.toString('utf-8'));
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
 
   async decrypt(source) {
-      try {
-        const plainTxt= this.decryptUtility.decrypt(source);
-        return plainTxt;
-      } catch (error) {
-    throw new Error(error);
-      }
+    try {
+      const plainTxt = this.decryptUtility.decrypt(source);
+      return plainTxt;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 }

@@ -1,5 +1,4 @@
 const R = require('ramda')
-const Promise = require('bluebird');
 const stackTrace = require('stack-trace');
 const SplunkLogger = require('splunk-logging').Logger;
 
