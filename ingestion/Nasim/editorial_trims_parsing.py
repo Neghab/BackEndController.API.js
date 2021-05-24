@@ -1,17 +1,6 @@
-'''
 import pandas as pd
 import re
-
-def main():
-
-    with open("/Users/NTavakol/carv_document_Nasim/AC_Editorial/Final_Trim Spreadsheet_Sheet1.csv", "r") as data:
-        df_trims = pd.DataFrame(data)
-# df[df['Country (region)'].str.match('^P.*')== True]
-    print(df_trims)
-'''
-import pandas as pd
-import re
-import json
+# import json
 import numpy as np
 from azure.cosmos import exceptions, CosmosClient, PartitionKey
 from pandas.core.dtypes.missing import isnull
@@ -60,56 +49,28 @@ def makes_data():
 
 
 def main():
+	container = cosmos_connection()
 	ymmt_data = cosmos_data()
+	
 	df_ymmt = pd.DataFrame(ymmt_data)
 	# print(df_ymmt.query(str(df_ymmt["ymmtId"]) == "2020-00000897-00037094"))
 	
 
 	# print(df_ymmt.loc[df_ymmt["trim"].isna()])
-	df_NoTrim = df_ymmt.loc[df_ymmt["trim"].isna()]
-	df_WithTrim =df_ymmt.loc[df_ymmt["trim"].notna()]
+	# df_NoTrim = df_ymmt.loc[df_ymmt["trim"].isna()]
+	# df_WithTrim =df_ymmt.loc[df_ymmt["trim"].notna()]
 
-	makes = makes_data()	
+	# makes = makes_data()	
 	csv_file = "/Users/NTavakol/carv_document_Nasim/AC_Editorial/Final_Trim Spreadsheet_Sheet1.csv"
 	path = "/Users/NTavakol/carv_document_Nasim/AC_Editorial/"
 	
-	# with open(path + "makes.json",) as f:
-	# 	makes = json.load(f)
+
 	
 	df_trims = pd.read_csv(csv_file, header='infer')
 	df_trims.rename(columns={"ID_1": "ID", "ID_2": "options_string"}, inplace=True)
 	df_trims["trim"] = None
-##================================ Drafts===========================	
-	# df_trims[df_trims['options_string'].str.match('Volkswagen')== True, 'Volkswagen']
-    # df_trims["makes"] = ["Volkswagen" if df_trims['options_string'].str.match('Volkswagen')== True]
 
-    #Converting options_string data type to string
-    # df_trims.astype({"options_string":"varchar"})
-    # df_trims.filter(like="Volkswagen",axis="options_string")
 
-	# df_trims.loc[df_trims["options_string"].str.contains(r"\bBMW\b") == True, "make"] =  "BMW"
-	# df_trims.loc[df_trims["options_string"].str.contains(r"\b7 Series\b") == True, "model"] =  "7 Series"
-	# df_trims.loc[df_trims["options_string"].str.contains(r"\b760Li Sedan 4D\b") == True, "trim"] =  "760Li Sedan 4D"
-
-	# for trim in ["SLE Pickup 4D","SX Turbo Sport Utility 4D","LX Sport Utility 4D","EX Sport Utility 4D]"]:
-	# for trim in ["1.4T R-Line Sedan 4D","+ Wagon 4D","#PinkBeetle Hatchback 2D","! Wagon 4D","#PinkBeetle Convertible 2D"]:
-
-	#"{:08d}".format(897)
-##=================================================================
-	# l_ymmtids = ["2016-00000005-00032913-00330793",
-	# 	"2016-00000005-00032913-00330800",
-	# 	"2016-00000005-00032913-00330791",
-	# 	"2016-00000005-00032913-00330781",
-	# 	"2016-00000005-00032913-00330792",
-	# 	"2016-00000005-00032913-00330787",
-	# 	"2016-00000005-00032913-00330812",
-	# 	"2016-00000005-00032913-00330798"]
-
-	# df_ymmt_bmw = df_ymmt[df_ymmt["ymmtId"].isin( l_ymmtids	)]
-	
-    
-	# trim_ids = [21819090,21819096,21819088,21819092,21819094]
-	# df_trims = df_trims[df_trims["ID"].isin(trim_ids)]
 
 	# For ymmt with trim
 	for index, row in df_ymmt.iterrows():
@@ -147,28 +108,81 @@ def main():
 			& (df_trims["model"] == model)
 			& (df_trims["options_string"].str.contains(rf"\b{trim}\b") == True), "trim_id"] =  trim_id
 		
-		# df_trims.loc[df_trims["options_string"].str.contains(rf"\b{year}\b") == True, "year"] =  year
-		# df_trims.loc[df_trims["options_string"].str.contains(rf"\b{make}\b") == True, "make"] =  make
-		# df_trims.loc[df_trims["options_string"].str.contains(rf"\b{model}\b") == True, "model"] =  model
-		# df_trims.loc[df_trims["options_string"].str.contains(rf"\b{trim}\b") == True, "trim"] =  trim
-
-		# df_trims.loc[df_trims["options_string"].str.contains(rf"\b{make}\b") == True, "make_id"] =  make_id #"{:08d}".format(make_id)
-		# df_trims.loc[df_trims["options_string"].str.contains(rf"\b{model}\b") == True, "model_id"] =  model_id #"{:08d}".format(model_id)
-		# if pd.notnull(row["trim"]):
-		# 	df_trims.loc[df_trims["options_string"].str.contains(rf"\b{trim}\b") == True, "trim_id"] =  trim_id #"{:08d}".format(int(trim_id))
-		# 	print(row["trim"])
-	
-	
-	# Creating ymmtId for Trim Review data	
-	# df_trims["ymmtId"]=(df_trims["year"]+"-"+df_trims["make_id"]+"-"+df_trims["model_id"]+"-"+df_trims["trim_id"])	
+		
 	
 	# Merging Reviews(descriptions) data with ymmt data from cosmos
 	df_trims_description = df_ymmt.merge(df_trims, how="left", on=["year","make_id","model_id","trim_id"])
 	
+	##=== Updating documents with new additional filed; "Description"
+
+	# Filtering unmatched Description's rows from DataFrame
+	df_trims_desc_filtered = df_trims_description.dropna()
+
+
+	# for index, doc in enumerate(ymmt_data):
+	# 	ymmt_id = doc["ymmtId"]
+	# 	try:
+	# 		desc = df_trims_desc_filtered['Option_Description'].where(
+	# 							df_trims_desc_filtered['ymmtId'] == '{0}'.format(ymmt_id)).dropna().values[0]	
+	# 	except: 
+	# 		print('index {0} is out of bounds for axis 0 with size 0'.format(index))
+
+	# 	item_response = container.read_item(item=doc["ymmtId"], partition_key=doc["/ymmtId"])
+	# 	item_response['description']= desc  
+	# 	# response =container.replace_item(item=doc["ymmtId"],body=item_response)   
+	# 	# request_charge = container.client_connection.last_response_headers['x-ms-request-charge']
+	# 	# print('Read item with id {0}. Operation consumed {1} request units'.format(item_response['id'], (request_charge)))
+
+	# 	# doc["description"]=desc
+	# 	print(ymmt_id)
+	# 	print(item_response)
+
+
+	# desc = df_trims_desc_filtered['Option_Description'].where(
+	# 							df_trims_desc_filtered['ymmtId'] == '{0}'.format(ymmt_id)).dropna().values[0]
+
+	'''
+	## to make a data set of selected documents to add description
+	# df_desc_selected = df_trims_desc_filtered['Option_Description'].where(
+	# 							df_trims_desc_filtered['ymmtId'] in []).dropna()
+	'''
+	'''
+		samples = {
+			"ymmtId":["2017-00000897-00037094-00335863","2016-00000507-00015028-00331026"],
+			"Option_Description":["The 2017 Genesis G80 3.8 Sedan offers a Rear Bumper Appliqué. The rear bumper applique provides a freshness to the rear of the car. It is a self-adhesive vinyl film that fits over the top of the rear bumper. It hides blemishes due to scratches and scrapes that may arise from loading and unloading items from the trunk area. It is UV-resistant to defend against the damaging rays of the sun, which may dull the bumper’s finish.",
+			"The 2016 Smart Fortwo Passion Hatchback highlights a 6-speed automatic dual-clutch. The 6-speed dual-clutch automatic transmission may increase fuel efficiency by as much 10% compared to the 5-speed standard transmission. The 2016 Smart Fortwo Passion Hatchback was specifically designed with fuel efficiency as the main priority. The dual-clutch operational concept allows the vehicle's transmission to work more as a manual than as an automatic."
+			]		
+
+		}
+		df_trims_desc_filtered = pd.DataFrame(samples)
+	'''
+	for index, row in df_trims_desc_filtered.iterrows():
+		ymmt_id = row["ymmtId"]
+		desc = row["Option_Description"]
+
+		query = ''' SELECT * FROM c WHERE c.ymmtId = '%s' ''' % ymmt_id
+    
+		item_response = list(container.query_items(
+    	query=query,
+    	enable_cross_partition_query=True
+    	) )
+
+		# item_response = container.read_item(item=ymmt_id, partition_key="ymmtId")
+		item_response = item_response[0]
+		item_response['description']= desc
+		# response =container.replace_item(item=doc["ymmtId"],body=item_response)   
+		# request_charge = container.client_connection.last_response_headers['x-ms-request-charge']
+		# print('Read item with id {0}. Operation consumed {1} request units'.format(item_response['id'], (request_charge)))
+		print(item_response)
+
+
+	##=== Write to flat files ===	
+	# df_trims_description.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/reviews_ymmt_merged_finall.csv")	
 	# df_trims.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/df_trims_with_ymmt_Id_generated.csv")
-	df_trims_description.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/reviews_ymmt_merged_finall.csv")	
 	# df_trims.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/df_trims_bmw_test.csv")	
-	print(df_trims)
+
+
+	# print(df_trims_desc_filtered.head())
 
 
 
