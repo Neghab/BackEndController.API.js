@@ -170,7 +170,7 @@ def main():
 		# item_response = container.read_item(item=ymmt_id, partition_key="ymmtId")
 		item_response = item_response[0]
 		item_response['description']= desc
-		# response =container.replace_item(item=doc["ymmtId"],body=item_response)   
+		# response =container.replace_item(item=row["ymmtId"],body=item_response)   
 		# request_charge = container.client_connection.last_response_headers['x-ms-request-charge']
 		# print('Read item with id {0}. Operation consumed {1} request units'.format(item_response['id'], (request_charge)))
 		print(item_response)
