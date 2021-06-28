@@ -139,8 +139,8 @@ def data_flattening(response):
 
 def main():
 	container = cosmos_connection()
-	ymmt_data = cosmos_data()
-	# ymmt_data = cosmos_data_options_test()
+	# ymmt_data = cosmos_data()
+	ymmt_data = cosmos_data_options_test()
 	ymmt_valueAddOptions = filter_none_valueAddOptions(ymmt_data)
 	ymmt_data_flat = data_flattening(ymmt_valueAddOptions)
 	df_ymmt = pd.DataFrame(ymmt_data_flat)
