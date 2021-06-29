@@ -214,10 +214,12 @@ def main():
 				& (df_trims["trim"] == trim),  "trim_pos"] = df_trims["option_string_cln"].str.find(trim) + len(trim) + 1
 			
 		else:
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model), "trim_pos"] = df_trims["option_string_cln"].str.find(trim) + len(trim) + 1
-				
+			try:
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model), "trim_pos"] = df_trims["option_string_cln"].str.find(trim) + len(trim) + 1
+			except:
+				print("N/A model")	
 	df_trims.loc[df_trims["trim_pos"].isna(), "trim_pos"] = -1
 	df_trims["option_pos_int"] = df_trims["trim_pos"].astype(int)
 

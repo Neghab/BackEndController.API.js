@@ -214,10 +214,13 @@ def main():
 				& (df_trims["trim"] == trim),  "trim_pos"] = df_trims["option_string_cln"].str.find(trim) + len(trim) + 1
 			
 		else:
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model), "trim_pos"] = df_trims["option_string_cln"].str.find(trim) + len(trim) + 1
-				
+			try:
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model), "trim_pos"] = df_trims["option_string_cln"].str.find(trim) + len(trim) + 1
+			except:
+				print("N/A model")
+
 	df_trims.loc[df_trims["trim_pos"].isna(), "trim_pos"] = -1
 	df_trims["option_pos_int"] = df_trims["trim_pos"].astype(int)
 
@@ -276,6 +279,7 @@ def main():
 	for index, row in df_trims_desc_filtered.iterrows():	
 		ymmt_id = row["ymmtId"]
 		desc = row["Option_Description"]
+		option_id = row["option_id"]
 
 		query = ''' SELECT * FROM c WHERE c.ymmtId = '%s' ''' % ymmt_id
     
@@ -285,8 +289,13 @@ def main():
     	) )
 
 		# item_response = container.read_item(item=row["ymmtId"], partition_key="ymmtId")
-		# item_response = item_response[0]
+		item_response = item_response[0]
 		# item_response['description']= desc
+		# for item in item_response["valueAddOptions"]:
+		# 	if item["option_id"] == option_id:
+		# 		item['description']= desc
+		# 	pprint.pprint(item)
+
 
 	## Replacing cosmos document with item_response which includes oprtions_description
 	# 	# response =container.replace_item(item=row["ymmtId"],body=item_response)   
@@ -303,7 +312,7 @@ def main():
 
 
 	# print(item_response)
-	# pprint.pprint(item_response)
+	pprint.pprint(item_response)
 
 if __name__ == '__main__':
 	main()
