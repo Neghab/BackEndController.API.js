@@ -287,8 +287,12 @@ def main():
     	) )
 
 		# item_response = container.read_item(item=row["ymmtId"], partition_key="ymmtId")
-		# item_response = item_response[0]
+		item_response = item_response[0]
 		# item_response['description']= desc
+		for item in item_response["valueAddOptions"]:
+			if item["option_id"] == option_id:
+				item['description']= desc
+				pprint.pprint(item)
 
 	## Replacing cosmos document with item_response which includes oprtions_description
 	# 	# response =container.replace_item(item=row["ymmtId"],body=item_response)   
@@ -300,12 +304,12 @@ def main():
 
 	##=== Write to flat files ===	
 	
-	df_trims.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/df_trim_samples.csv")
-	df_trims_desc_filtered.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/cosmos_data_with_descriptions_samples.csv")
+	df_trims.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/df_trim_all.csv")
+	df_trims_desc_filtered.to_csv("/Users/NTavakol/carv_document_Nasim/AC_Editorial/cosmos_data_with_descriptions.csv")
 
 
 	# print(item_response)
-	# pprint.pprint(item_response)
+	pprint.pprint(item_response)
 
 if __name__ == '__main__':
 	main()

@@ -280,6 +280,10 @@ def main():
 		ymmt_id = row["ymmtId"]
 		desc = row["Option_Description"]
 		option_id = row["option_id"]
+		make = row["make_x"]
+		print(option_id)
+		print(ymmt_id)
+		print(make)
 
 		query = ''' SELECT * FROM c WHERE c.ymmtId = '%s' ''' % ymmt_id
     
@@ -291,10 +295,10 @@ def main():
 		# item_response = container.read_item(item=row["ymmtId"], partition_key="ymmtId")
 		item_response = item_response[0]
 		# item_response['description']= desc
-		# for item in item_response["valueAddOptions"]:
-		# 	if item["option_id"] == option_id:
-		# 		item['description']= desc
-		# 	pprint.pprint(item)
+		for item in item_response["valueAddOptions"]:
+			if item["option_id"] == option_id:
+				item['description']= desc
+				pprint.pprint(item)
 
 
 	## Replacing cosmos document with item_response which includes oprtions_description
