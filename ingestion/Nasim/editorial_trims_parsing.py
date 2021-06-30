@@ -239,27 +239,31 @@ def main():
 		option_id = row["option_id"]
 		# print(make," ,",option_name)
 		if row['flg']:
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["trim"] == trim)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["trim"] == trim)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
+			try:
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["trim"] == trim)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["trim"] == trim)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
+			except:
+				print(make," ,",option_name," ,","with_trim")
 		else:
-			
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
-			
+			try:
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
+			except:
+				print(make," ,",option_name," ,","no_trim")
 	# print(df_trims)	
 
 	## Filtering to reviews for year 2011 which is available in 	
@@ -295,7 +299,7 @@ def main():
 				pprint.pprint(item)
 
 	## Replacing cosmos document with item_response which includes oprtions_description
-	# 	# response =container.replace_item(item=row["ymmtId"],body=item_response)   
+		response =container.replace_item(item=item_response,body=item_response)   
 	# 	# request_charge = container.client_connection.last_response_headers['x-ms-request-charge']
 	# 	# print('Read item with id {0}. Operation consumed {1} request units'.format(item_response['id'], (request_charge)))
 	# 	# print(row["ymmtId"])

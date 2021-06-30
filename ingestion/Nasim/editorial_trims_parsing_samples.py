@@ -5,6 +5,7 @@ import numpy as np
 from azure.cosmos import exceptions, CosmosClient, PartitionKey
 from pandas.core.dtypes.missing import isnull
 import pprint
+import sys
 
 def cosmos_connection():
 	# Initializing the Cosmos client
@@ -26,7 +27,7 @@ def cosmos_connection():
 	)
 	return container
 
-def cosmos_data():
+def cosmos_data(make):
 	container = cosmos_connection()
 
 	query = ''' SELECT DISTINCT c.ymmtId, 
@@ -35,7 +36,9 @@ def cosmos_data():
 						c.year,c.year_id,
 						c.trim,c.trim_id,
 						c.valueAddOptions  
-				FROM c '''
+				FROM c 
+				WHERE c.make = '%s' ''' % make
+				
     
 	items = list(container.query_items(
     	query=query,
@@ -138,9 +141,10 @@ def data_flattening(response):
 	return rows 
 
 def main():
+	input_make = sys.argv[1]
 	container = cosmos_connection()
-	# ymmt_data = cosmos_data()
-	ymmt_data = cosmos_data_options_test()
+	ymmt_data = cosmos_data(input_make)
+	# ymmt_data = cosmos_data_options_test()
 	ymmt_valueAddOptions = filter_none_valueAddOptions(ymmt_data)
 	ymmt_data_flat = data_flattening(ymmt_valueAddOptions)
 	df_ymmt = pd.DataFrame(ymmt_data_flat)
@@ -240,27 +244,31 @@ def main():
 		option_id = row["option_id"]
 		# print(make," ,",option_name)
 		if row['flg']:
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["trim"] == trim)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["trim"] == trim)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
+			try:
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["trim"] == trim)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["trim"] == trim)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
+			except:
+				print(make," ,",option_name," ,","with_trim")
 		else:
-			
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
-			df_trims.loc[(df_trims["year"] == year) 
-				& (df_trims["make"] == make)
-				& (df_trims["model"] == model)
-				& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
-			
+			try:
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_name"] =  option_name
+				df_trims.loc[(df_trims["year"] == year) 
+					& (df_trims["make"] == make)
+					& (df_trims["model"] == model)
+					& (df_trims["option_substring"].str.contains(rf"\b{option_name}\b") == True), "option_id"] = option_id
+			except:
+				print(make," ,",option_name," ,","no_trim")
 	# print(df_trims)	
 
 	## Filtering to reviews for year 2011 which is available in 	
@@ -302,7 +310,7 @@ def main():
 
 
 	## Replacing cosmos document with item_response which includes oprtions_description
-	# 	# response =container.replace_item(item=row["ymmtId"],body=item_response)   
+		response =container.replace_item(item=item_response,body=item_response)   
 	# 	# request_charge = container.client_connection.last_response_headers['x-ms-request-charge']
 	# 	# print('Read item with id {0}. Operation consumed {1} request units'.format(item_response['id'], (request_charge)))
 	# 	# print(row["ymmtId"])
